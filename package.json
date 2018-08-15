@@ -1,10 +1,20 @@
 {
-  "name": "myapp",
-  "version": "0.0.0",
+  "name": "integrify-system-backend",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Integrify-Finland/integrify-system-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Integrify-Finland/integrify-system-backend/issues"
+  },
+  "homepage": "https://github.com/Integrify-Finland/integrify-system-backend#readme",
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
