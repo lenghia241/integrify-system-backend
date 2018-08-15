@@ -1,10 +1,9 @@
 {
   "name": "integrify-system-backend",
   "version": "0.0.1",
-  "description": "",
-  "main": "server.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -15,5 +14,13 @@
   "bugs": {
     "url": "https://github.com/Integrify-Finland/integrify-system-backend/issues"
   },
-  "homepage": "https://github.com/Integrify-Finland/integrify-system-backend#readme"
+  "homepage": "https://github.com/Integrify-Finland/integrify-system-backend#readme",
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
+  }
 }
