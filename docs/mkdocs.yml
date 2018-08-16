@@ -1,10 +1,10 @@
 site_name: Integrify-Backend
-site_url: https://github.com/Integrify-Finland/integrify-system-backend/tree/test
+site_url: https://integrify-system-backend-doc.readthedocs.io/en/develop/
 site_description: Project documentation with Markdown.
 site_author: Integrify-Backend Team
 
-repo_url: https://github.com/Integrify-Finland/integrify-system-backend/tree/test
-edit_uri: ""
+repo_url: https://github.com/Integrify-Finland/integrify-system-backend
+edit_uri: "/tree/develop/docs"
 
 nav:
     - Home: README.md
