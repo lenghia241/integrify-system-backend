@@ -4,7 +4,7 @@ site_description: Project documentation with Markdown.
 site_author: Integrify-Backend Team
 
 repo_url: https://github.com/Integrify-Finland/integrify-system-backend/
-edit_uri: tree/develop/docs/
+edit_uri: develop/docs/
 
 nav:
     - Home: README.md
