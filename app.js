@@ -23,7 +23,7 @@ mongoose.connect(
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
-	console.log("we are connected to the database.");
+	console.log(`Connected to ${keys.mongoURI}`);
 });
 
 // view engine setup
