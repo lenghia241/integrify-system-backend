@@ -1,5 +1,4 @@
 {
-  "plugins": ["prettier"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -24,5 +23,6 @@
     "prefer-template": "error",
     "no-unused-vars": "error",
     "no-console": ["warn"]
-  }
+  },
+  "plugins": ["prettier"]
 }

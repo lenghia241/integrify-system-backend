@@ -12,8 +12,6 @@ const keys = require("./config/keys");
 
 const app = express();
 
-console.log("we are now using: ", keys.mongoURI);
-
 //mongoDB connection
 mongoose.connect(
 	keys.mongoURI,
@@ -25,7 +23,7 @@ mongoose.connect(
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
-	console.log("we are connected");
+	console.log("we are connected to the database.");
 });
 
 // view engine setup
