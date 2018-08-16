@@ -1,6 +1,4 @@
-# integrify-system-backend
 
-to do
 1. Creating boilerplate
 2. Setting up basic routing
 
