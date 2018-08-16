@@ -33,5 +33,5 @@ Installation is done using the npm install command:
 npm install cookie-parser
 ```
 
-##### morgon
+##### morgan
 Morgan is used for logging request details.On any requests being made,it generates logs automatically.
