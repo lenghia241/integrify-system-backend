@@ -8,18 +8,25 @@ const mongoose = require("mongoose");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
-/* const keys = require("./config/keys"); */
+const keys = require("./config/keys");
 
 const app = express();
 
+console.log("we are now using: ", keys.mongoURI);
+
 //mongoDB connection
 mongoose.connect(
-	"mongodb+srv://user:integrify123@cluster0-shard-00-00-lukex.mongodb.net/",
+	keys.mongoURI,
 	{
-		dbName: "admin",
 		useNewUrlParser: true,
 	}
 );
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+	console.log("we are connected");
+});
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
