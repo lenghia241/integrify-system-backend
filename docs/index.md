@@ -35,3 +35,6 @@ npm install cookie-parser
 
 ##### morgan
 Morgan is used for logging request details.On any requests being made,it generates logs automatically.
+
+##### mongoose
+Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
