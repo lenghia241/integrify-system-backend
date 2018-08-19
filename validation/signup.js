@@ -8,7 +8,7 @@ module.exports = data => {
 	const regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/g;
 	if (!errors.password) {
 		errors.password = !regex.test(password)
-			? "Password must be at least 8 characters in length, in which contain at least 1 number, 1 capitalized characters and 1 symbol"
+			? "Password must be at least 8 characters in length, in which contain at least 1 number, 1 capitalized character and 1 symbol"
 			: "";
 	}
 	if (!errors.password) {

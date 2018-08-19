@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const persistentUserSchema = new Schema({
 	user: {
 		type: Schema.Types.ObjectId,
-		ref: "tempusers",
+		ref: "tempUsers",
 	},
 	password: {
 		type: String,

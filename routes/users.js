@@ -133,7 +133,7 @@ router.get("/verify", (req, res) => {
 	}
 });
 
-//PUT persistent user, with password and roles
+//PUT persistent user, with password
 router.put("/signup", (req, res) => {
 	const { errors, isValid, } = validateSignup(req.body);
 	if (!isValid) {
@@ -163,9 +163,12 @@ router.put("/signup", (req, res) => {
 //GET all persistent users
 router.get("/signup", (req, res) => {
 	PersistentUser.find()
+		.populate("user", ["firstname", "lastname", "email",])
 		.sort({ date: -1, })
 		.then(users => res.json(users))
 		.catch(() => res.status(400).json({ msg: "No sign-up users found", }));
 });
+
+//LOGIN user
 
 module.exports = router;
