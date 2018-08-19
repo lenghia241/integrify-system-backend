@@ -2,11 +2,13 @@ const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const credentials = require("../config/credentials");
 const TempUser = require("../models/tempUser");
 const PersistentUser = require("../models/persistentUser");
 const validateTempUser = require("../validation/temp-signup");
 const validateSignup = require("../validation/signup");
+const validateLogin = require("../validation/login");
 
 /* GET users listing. */
 router.get("/", function(req, res) {
@@ -149,7 +151,11 @@ router.put("/signup", (req, res) => {
 			bcrypt.genSalt(10, (err, salt) => {
 				bcrypt.hash(password, salt, (err, hash) => {
 					if (err) throw err;
-					PersistentUser.findByIdAndUpdate(user._id, { password: hash, })
+					PersistentUser.findByIdAndUpdate(
+						user._id,
+						{ password: hash, },
+						{ new: true, }
+					)
 						.then(user => res.json(user))
 						.catch(e =>
 							res.status(400).json({ msg: "Password cannot be updated", })
@@ -170,5 +176,40 @@ router.get("/signup", (req, res) => {
 });
 
 //LOGIN user
+router.post("/login", (req, res) => {
+	const { email, password, } = req.body;
+	const { errors, isValid, } = validateLogin(req.body);
+	if (!isValid) {
+		return res.status(400).json(errors);
+	}
+
+	TempUser.findOne({ email, })
+		.then(tempuser => {
+			const { _id, firstname, } = tempuser;
+			PersistentUser.findOne({ user: _id, }).then(persistent_user => {
+				if (!persistent_user) {
+					return res
+						.status(401)
+						.json({ email: "Email has not either been verified or approved", });
+				}
+				bcrypt.compare(password, persistent_user.password).then(isMatch => {
+					if (isMatch) {
+						const { id, roles, } = persistent_user;
+						const payload = {
+							id,
+							firstname,
+							roles,
+						};
+						jwt.sign(payload, credentials.secretOrKey, (err, token) =>
+							res.json({ token: `Bearer ${token}`, })
+						);
+					} else {
+						return res.status(400).json({ password: "Password incorrect", });
+					}
+				});
+			});
+		})
+		.catch(() => res.status(404).json({ email: "User not found", }));
+});
 
 module.exports = router;
