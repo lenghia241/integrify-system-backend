@@ -1,4 +1,4 @@
-const Validator = require("validator");
+const validator = require("validator");
 
 module.exports = data => {
 	let { email, password, } = data;
@@ -7,7 +7,7 @@ module.exports = data => {
 		password: !password ? "Password is required" : "",
 	};
 	if (!errors.email) {
-		errors.email = !Validator.isEmail(email) ? "Email is invalid" : "";
+		errors.email = !validator.isEmail(email) ? "Email is invalid" : "";
 	}
 	return {
 		errors,
