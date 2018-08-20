@@ -1,5 +1,6 @@
 const createError = require("http-errors");
 const express = require("express");
+const cors = require("cors");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
@@ -8,21 +9,18 @@ const mongoose = require("mongoose");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const dashboardRouter = require("./routes/dashboard");
-const profileRouter = require("./routes/profile");
+const profilesRouter = require("./routes/profiles");
 const baseRouter = require("./routes/base");
-
 
 const keys = require("./config/keys");
 
 const app = express();
 
-//mongoDB connection
-mongoose.connect(
-	keys.mongoURI,
-	{
-		useNewUrlParser: true,
-	}
-);
+// cors setup
+app.use(cors());
+
+// mongoDB connection
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, });
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -43,7 +41,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/api/dashboard", dashboardRouter);
-app.use("/api/profile", profileRouter);
+app.use("/v1/dashboard", dashboardRouter);
+app.use("/api/profiles", profilesRouter);
+app.use("/v1/profiles", profilesRouter);
 app.use("*", baseRouter);
 
 // catch 404 and forward to error handler

@@ -19,19 +19,48 @@ const educationSchema = new Schema({
 	details: String,
 });
 
+const assignmentSchema = new Schema({
+	title: String,
+	status: Boolean,
+	github_link: String,
+});
 const userSchema = new Schema({
-	_id: Schema.Types.ObjectId,
-	email: String,
-	password: String,
-	fullname: String,
-	roles: String,
+	firstname: {
+		type: String,
+		required: true,
+	},
+	lastname: {
+		type: String,
+		required: true,
+	},
+	email: {
+		type: String,
+		required: true,
+	},
+	password: {
+		type: String,
+		required: true,
+	},
+	role: {
+		type: String,
+		required: true,
+	},
+	batch: {
+		type: String,
+		required: true,
+	},
 	bio: String,
 	competencies: [String,],
-	technologies: [String,],
-	github_url: String,
-	linkedin_url: String,
+	skills: [String,],
+	github: String,
+	linkedin: String,
 	education: [educationSchema,],
-	work_experience: [workSchema,],
+	experience: [workSchema,],
+	example_of_work: [assignmentSchema,],
+	date: {
+		type: Date,
+		default: Date.now,
+	},
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Users", userSchema);
