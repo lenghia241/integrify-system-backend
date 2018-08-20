@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const dashboardRouter = require("./routes/dashboard");
-const profilesRouter = require("./routes/profiles");
+const profileRouter = require("./routes/profile");
 const baseRouter = require("./routes/base");
 
 const keys = require("./config/keys");
@@ -20,7 +20,10 @@ const app = express();
 app.use(cors());
 
 // mongoDB connection
-mongoose.connect(keys.mongoURI, {useNewUrlParser: true,});
+mongoose.connect(
+	keys.mongoURI,
+	{ useNewUrlParser: true, }
+);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -43,8 +46,8 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/api/dashboard", dashboardRouter);
 app.use("/v1/dashboard", dashboardRouter);
-app.use("/api/profiles", profilesRouter);
-app.use("/v1/profiles", profilesRouter);
+app.use("/api/profile", profileRouter);
+app.use("/v1/profile", profileRouter);
 app.use("*", baseRouter);
 
 // catch 404 and forward to error handler
