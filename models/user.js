@@ -19,6 +19,11 @@ const educationSchema = new Schema({
 	details: String,
 });
 
+const assignmentSchema = new Schema({
+	title: String,
+	status: Boolean,
+	github_link: String,
+});
 const userSchema = new Schema({
 	firstname: {
 		type: String,
@@ -40,13 +45,18 @@ const userSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	batch: {
+		type: String,
+		required: true,
+	},
 	bio: String,
 	competencies: [String,],
-	technologies: [String,],
+	skills: [String,],
 	github: String,
 	linkedin: String,
 	education: [educationSchema,],
 	experience: [workSchema,],
+	example_of_work: [assignmentSchema,],
 	date: {
 		type: Date,
 		default: Date.now,

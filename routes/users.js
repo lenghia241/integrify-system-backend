@@ -63,9 +63,12 @@ router.delete("/temp-signup/:id", (req, res) => {
 router.post("/temp-signup/:id", (req, res) => {
 	const { id, } = req.params;
 	const { user, pass, } = credentials;
-	const { role, } = req.body;
+	const { role, batch, } = req.body;
 	if (!role) {
 		return res.status(400).json({ role: "Roles is required", });
+	}
+	if (!batch) {
+		return res.status(400).json({ batch: "Batch is required", });
 	}
 	TempUser.findById(id)
 		.then(tempUser => {
@@ -76,6 +79,7 @@ router.post("/temp-signup/:id", (req, res) => {
 				email,
 				password: "not generated",
 				role,
+				batch,
 			});
 			newUser
 				.save()
