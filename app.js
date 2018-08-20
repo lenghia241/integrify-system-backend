@@ -19,13 +19,8 @@ const app = express();
 // cors setup
 app.use(cors());
 
-//mongoDB connection
-mongoose.connect(
-	keys.mongoURI,
-	{
-		useNewUrlParser: true,
-	}
-);
+// mongoDB connection
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, });
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
