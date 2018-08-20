@@ -3,6 +3,7 @@ const router = express.Router();
 const nodemailer = require("nodemailer");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const axios = require("axios");
 const credentials = require("../config/credentials");
 const TempUser = require("../models/tempUser");
 const User = require("../models/user");
@@ -25,7 +26,7 @@ router.post("/temp-signup", (req, res) => {
 	TempUser.findOne({ email, }).then(tempUser => {
 		if (tempUser) {
 			errors.email = "Email already exists";
-			return res.status(400).json(errors);
+			return res.status(409).json(errors);
 		}
 		const newTempUser = new TempUser({
 			firstname,
@@ -70,6 +71,7 @@ router.post("/temp-signup/:id", (req, res) => {
 	if (!batch) {
 		return res.status(400).json({ batch: "Batch is required", });
 	}
+	const rand = Math.random();
 	TempUser.findById(id)
 		.then(tempUser => {
 			const { firstname, lastname, email, } = tempUser;
@@ -77,7 +79,7 @@ router.post("/temp-signup/:id", (req, res) => {
 				firstname,
 				lastname,
 				email,
-				password: "not generated",
+				password: rand,
 				role,
 				batch,
 			});
@@ -86,7 +88,7 @@ router.post("/temp-signup/:id", (req, res) => {
 				.then(() => {
 					const link = `${req.protocol}://${req.get(
 						"host"
-					)}/users/verify?id=${id}&role=${role}&email=${email}`;
+					)}/users/verify?id=${id}&role=${role}&email=${email}&rand=${rand}`;
 					const transporter = nodemailer.createTransport({
 						service: "Gmail",
 						auth: {
@@ -134,8 +136,8 @@ router.get("/verify", (req, res) => {
 	const dev_link = "http://localhost:3000";
 	const prod_link = "https://integrify.network";
 	if (link === dev_link || link === prod_link) {
-		const { email, } = req.query;
-		User.findOne({ email, })
+		const { email, rand, } = req.query;
+		User.findOne({ email, password: rand, })
 			.then(user => res.json(user))
 			.catch(() => res.status(404).json({ msg: "No user found", }));
 	}
@@ -150,15 +152,24 @@ router.put("/signup", (req, res) => {
 	let { email, password, } = req.body;
 	User.findOne({ email, })
 		.then(user => {
-			if (user.password !== "not generated") {
+			const regex = /[$a-zA-Z]/g;
+			if (regex.test(user.password)) {
 				errors.msg = "You have already registered";
-				return res.status(400).json(errors);
+				return res.status(409).json(errors);
 			}
 			bcrypt.genSalt(10, (err, salt) => {
 				bcrypt.hash(password, salt, (err, hash) => {
 					if (err) throw err;
 					User.findByIdAndUpdate(user._id, { password: hash, }, { new: true, })
-						.then(user => res.json(user))
+						.then(user => {
+							// axios
+							// 	.post(`${req.protocol}://${req.get("host")}/users/login`, {
+							// 		email,
+							// 		password,
+							// 	})
+							// 	.then(data => res.send(data.data));
+							return res.json(user);
+						})
 						.catch(e =>
 							res.status(400).json({ msg: "Password cannot be updated", })
 						);
@@ -173,11 +184,12 @@ router.get("/signup", (req, res) => {
 	User.find()
 		.sort({ date: -1, })
 		.then(users => res.json(users))
-		.catch(() => res.status(400).json({ msg: "No sign-up users found", }));
+		.catch(() => res.status(404).json({ msg: "No sign-up users found", }));
 });
 
 //POST login user
 router.post("/login", (req, res) => {
+	console.log(req.body);
 	const { email, password, } = req.body;
 	const { errors, isValid, } = validateLogin(req.body);
 	if (!isValid) {
@@ -185,22 +197,25 @@ router.post("/login", (req, res) => {
 	}
 	User.findOne({ email, })
 		.then(user => {
-			if (user.password === "not generated") {
+			console.log(user.password);
+			const regex = /[$a-zA-Z]/g;
+			if (!regex.test(user.password)) {
 				return res
 					.status(401)
 					.json({ email: "Email has not either been verified or approved", });
 			}
 			bcrypt.compare(password, user.password).then(isMatch => {
 				if (isMatch) {
+					console.log(isMatch);
 					const { id, firstname, role, } = user;
 					const payload = { id, firstname, role, };
 					const token = jwt.sign(payload, credentials.secretOrKey, {
 						expiresIn: "1d",
 					});
 					res.cookie("jwt_token", token);
-					return res.send("cookie is set");
+					return res.json({ msg: "cookie is set", });
 				} else {
-					return res.status(400).json({ password: "Password incorrect", });
+					return res.status(403).json({ password: "Password incorrect", });
 				}
 			});
 		})
