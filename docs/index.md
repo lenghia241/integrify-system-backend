@@ -56,12 +56,12 @@ npm install mongoose
 ```
 app.get('/api/profile')
 ```
-###### For dashboard
+###### Dashboard
 ```
 app.get('/api/dashboard')
 ```
 
-###### For attendence
+###### Attendence
 ```
 app.get('/api/attendence')
 ```
