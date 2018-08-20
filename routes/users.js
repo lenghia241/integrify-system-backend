@@ -194,12 +194,9 @@ router.post("/login", (req, res) => {
 				if (isMatch) {
 					const { id, firstname, role, } = user;
 					const payload = { id, firstname, role, };
-					// jwt.sign(payload, credentials.secretOrKey, (err, token) => {
-					// 	return res
-					// 		.cookie("jwt_token", `Bearer ${token}`)
-					// 		.send("cookie is set");
-					// });
-					const token = jwt.sign(payload, credentials.secretOrKey);
+					const token = jwt.sign(payload, credentials.secretOrKey, {
+						expiresIn: "1d",
+					});
 					res.cookie("jwt_token", token);
 					return res.send("cookie is set");
 				} else {
@@ -208,6 +205,12 @@ router.post("/login", (req, res) => {
 			});
 		})
 		.catch(() => res.status(404).json({ email: "User not found", }));
+});
+
+//GET logout user
+router.get("/logout", (req, res) => {
+	res.clearCookie("jwt_token");
+	res.send("cleared cookie");
 });
 
 module.exports = router;
