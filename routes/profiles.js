@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const profile = require("../data/profilejson/profile.json");
+const profiles = require("../data/profilejson/profiles.json");
 
 router.get("/", (req, res) => {
-	res.send(profile);
+	res.send(profiles);
 });
 
 

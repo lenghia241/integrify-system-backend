@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const dashboardRouter = require("./routes/dashboard");
-const profileRouter = require("./routes/profile");
+const profilesRouter = require("./routes/profiles");
 
 const keys = require("./config/keys");
 
@@ -41,8 +41,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/api/dashboard", dashboardRouter);
-app.use("/api/profile", profileRouter);
-
+app.use("/api/profiles", profilesRouter);
 
 
 // catch 404 and forward to error handler
