@@ -50,4 +50,22 @@ Mongoose provides a straight-forward, schema-based solution to model your applic
 ```
 npm install mongoose
 ```
+### Basic Routes for API
+
+###### Profile
+```
+app.get('/api/profile')
+```
+###### For dashboard
+```
+app.get('/api/dashboard')
+```
+
+###### For attendence
+```
+app.get('/api/attendence')
+```
+
+
+
 
