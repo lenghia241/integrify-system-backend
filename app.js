@@ -1,6 +1,6 @@
 const createError = require("http-errors");
 const express = require("express");
-const cors = require('cors');
+const cors = require("cors");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
@@ -10,6 +10,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const dashboardRouter = require("./routes/dashboard");
 const profileRouter = require("./routes/profile");
+const attendanceRouter = require("./routes/attendance");
 const baseRouter = require("./routes/base");
 
 const keys = require("./config/keys");
@@ -20,7 +21,7 @@ const app = express();
 app.use(cors());
 
 // mongoDB connection
-mongoose.connect(keys.mongoURI, {useNewUrlParser: true,});
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, });
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -45,15 +46,17 @@ app.use("/api/dashboard", dashboardRouter);
 app.use("/v1/dashboard", dashboardRouter);
 app.use("/api/profile", profileRouter);
 app.use("/v1/profile", profileRouter);
+app.use("/api/attendance", attendanceRouter);
+app.use("/v1/attendance", attendanceRouter);
 app.use("*", baseRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
 	next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res) {
+app.use(function (err, req, res) {
 	// set locals, only providing error in development
 	res.locals.message = err.message;
 	res.locals.error = req.app.get("env") === "development" ? err : {};

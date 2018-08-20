@@ -1,0 +1,129 @@
+[
+    {
+      "_id": "5b7aa4546cc5c58dc715cc45",
+      "date": "Thu Aug 16 2018",
+      "attendance_data": [
+        {
+          "name": "5b7ab1957c9b3c63007d5c8c",
+          "timesStamp": {
+            "time_in": "08:46:25",
+            "time_out": "17:46:25",
+            "late": false,
+            "left_early": false
+          },
+          "attendance": "full"
+        },
+        {
+          "name": "5b7ab1952cc5b5a552cfda72",
+          "timesStamp": {
+            "time_in": "10:46:25",
+            "time_out": "14:46:25",
+            "late": true,
+            "left_early": true
+          },
+          "attendance": "partial"
+        },
+        {
+          "name": "5b7ab1953129baf45fac3a05",
+          "timesStamp": {
+            "time_in": "11:16:25",
+            "time_out": "17:02:25",
+            "late": true,
+            "left_early": false
+          },
+          "attendance": "partial"
+        },
+        {
+          "name": "5b7ab195f176fd2767d3a954",
+          "attendance": "absent"
+        }
+      ]
+    },
+    {
+      "_id": "5b7aa45458921ef3f027da3c",
+      "date": "Wed Aug 15 2018",
+      "attendance_data": [
+        {
+          "name": "5b7ab1957c9b3c63007d5c8c",
+          "timesStamp": {
+            "time_in": "08:46:25",
+            "time_out": "17:46:25",
+            "late": false,
+            "left_early": false
+          },
+          "attendance": "full"
+          
+        },
+        {
+          "name": "5b7ab1952cc5b5a552cfda72",
+          "timesStamp": {
+            "time_in": "10:46:25",
+            "time_out": "14:46:25",
+            "late": true,
+            "left_early": true
+          },
+          "attendance": "partial"
+        },
+        {
+          "name": "5b7ab1953129baf45fac3a05",
+          "timesStamp": {
+            "time_in": "11:16:25",
+            "time_out": "17:02:25",
+            "late": true,
+            "left_early": false
+          },
+          "attendance": "partial"
+        },
+        {
+          "name": "5b7ab195f176fd2767d3a954",
+          "timesStamp": {
+            "time_in": "08:55:25",
+            "time_out": "15:10:25",
+            "late": false,
+            "left_early": true
+          },
+          "attendance": "partial"
+        }
+      ]
+    },
+    {
+      "_id": "5b7aa454a972c05b68c078aa",
+      "date": "Tue Aug 14 2018",
+      "attendance_data": [
+        {
+          "name": "5b7ab1957c9b3c63007d5c8c",
+          "timesStamp": {
+            "time_in": "08:46:25",
+            "time_out": "17:46:25",
+            "late": false,
+            "left_early": false
+          },
+          "attendance": "full"          
+        },
+        {
+          "name": "5b7ab1952cc5b5a552cfda72",
+          "timesStamp": {
+            "time_in": "10:46:25",
+            "time_out": "14:46:25",
+            "late": true,
+            "left_early": true
+          },
+          "attendance": "partial"
+        },
+        {
+          "name": "5b7ab1953129baf45fac3a05",
+          "timesStamp": {
+            "time_in": "11:16:25",
+            "time_out": "17:02:25",
+            "late": true,
+            "left_early": false
+          },
+          "attendance": "partial"
+        },
+        {
+          "name": "5b7ab195f176fd2767d3a954",
+          "attendance": "absent"
+        }
+      ]
+    }
+]
