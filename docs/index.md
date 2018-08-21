@@ -60,6 +60,7 @@ This is API version1. In this we serve mockdata in json file...
 In this API you have access to array of users with following keys
 
 {
+
     "_id": "",
     "firstName": "",
     "lastName": "",
@@ -117,6 +118,7 @@ List of events
 In this API you can access to 
 
 {
+
     "_id": "",
     "title": "",
     "description": "",
@@ -141,6 +143,7 @@ List of Studysync
 In this you can have access to following keys
 
 {
+
     "_id": "",
     "firstName": "",
     "lastName": "",
@@ -158,6 +161,7 @@ List of Assignments
 In this API you can have access to following keys
 
 {
+    
     "_id": "",
     "date": "",
     "dueDate": "",
