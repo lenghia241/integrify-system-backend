@@ -65,7 +65,6 @@ In this API you have access to array of users with following keys
     "firstName": "",
     "lastName": "",
     "email": "",
-    "password": "",
     "role": "",
     "batch": "",
     "bio": "",
@@ -155,7 +154,7 @@ In this you can have access to following keys
 
     }
 
-id,firstname and lastname indicates user details who did studysync
+firstname and lastname indicates user details who did studysync
 
 
 List of Assignments
