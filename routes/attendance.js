@@ -1,85 +1,41 @@
 const express = require("express");
 const router = express.Router();
-let today = require("../data/attendance/today.json");
-const history = require("../data/attendance/history.json");
 
-const constants = require("../data/attendance/constants");
-const helpers = require("../data/attendance/helpers");
-
-const to_date = new Date().toDateString();
-
-router.get("/test", (req, res) => {
-    res.send(`${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`);
-});
+const history = require("../data/attendancejson/history.json");
+const helpers = require("../data/attendancejson/helpers");
 
 router.get("/", (req, res) => {
-    const { attendance_data, } = today[0];
-    const current_status = attendance_data.map(stud => {
-        return {
-            name: stud.name,
-            presence: stud.presence,
-        };
-    });
-
-    res.json(current_status);
+	const current_status = helpers.checkStatusToday(history[0]);
+	res.json(current_status);
 });
 
 
-router.get("/today", (req, res) => {
-    const foundIndex = helpers.checkTodayInHistory(today, history);
-    today = helpers.refreshToday(foundIndex, today, to_date);
-
-    res.send(today);
+router.get("/today/:student_id", (req, res) => {
+	const { student_id, } = req.params;
+	const current_status = helpers.checkStatusTodayById(history[0], student_id);
+	res.send(current_status);
 });
 
 router.get("/history", (req, res) => {
-    const foundIndex = helpers.checkTodayInHistory(today, history);
-    helpers.saveTodayInHistory(foundIndex, today, history, to_date);
-
-    res.send(history);
+	res.send(history);
 });
 
-router.post("/today", (req, res) => {
-    const foundIndex = helpers.checkTodayInHistory(today, history);
+router.put("/today/:studentId", (req, res) => {
+	const reqStud = {
+		name: req.params.studentId, //ObjectId of student
+		time: `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`, //default
+	};
 
-    helpers.saveTodayInHistory(foundIndex, today, history, to_date);
-    today = helpers.refreshToday(foundIndex, today, to_date);
-    // function firstFunc(_callback) {
-    //     _callback(today, to_date);
-    // }   
-    // firstFunc(helpers.testingRefreshToday);
+	// check attendance
+	let studentStatus = { msg: "Student is not found", };
+	const { attendance_data, } = history[0];
+	attendance_data.forEach(stud => {
+		if (stud.name === reqStud.name) {
+			studentStatus = helpers.assessAttendanceStatus(stud, reqStud.time);
+		}
+	});
 
-    const reqStud = {
-        name: req.body.name, //ObjectId of student
-        time: `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`, //default
-    };
-    // check attendance
-    let index = -1;
-    const { attendance_data, } = today[0];
-    attendance_data.forEach(stud => {
-        if (stud.name === reqStud.name) {
-            index = 1;
-            if (stud.timesStamp) {
-                stud.presence = false;
-                stud.timesStamp = {
-                    ...stud.timesStamp,
-                    time_out: reqStud.time,
-                    left_early:
-                        reqStud.time < constants.CHECK_OUT_TIME ? true : false,
-                };
-            } else {
-                stud.presence = true;
-                stud.timesStamp = {
-                    time_in: reqStud.time,
-                    late: reqStud.time > constants.CHECK_IN_TIME ? true : false,
-                };
-            }
-        }
-    });
-
-    index === -1
-        ? res.status(404).json({ msg: "Student is not found", })
-        : res.send(today);
+	res.send(studentStatus);
 });
 
 module.exports = router;
