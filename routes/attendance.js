@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const moment = require("moment");
 
 const history = require("../data/attendancejson/history.json");
 const helpers = require("../data/attendancejson/helpers");
@@ -17,13 +18,14 @@ router.get("/today/:student_id", (req, res) => {
 });
 
 router.get("/history", (req, res) => {
-	res.send(history);
+	const history_data = helpers.assessHistoryStatus(history.slice(1));
+	res.send(history_data);
 });
 
 router.put("/today/:studentId", (req, res) => {
 	const reqStud = {
 		name: req.params.studentId, //ObjectId of student
-		time: `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`, //default
+		time: moment().format("HH:mm:ss"), //default
 	};
 
 	// check attendance
@@ -31,7 +33,7 @@ router.put("/today/:studentId", (req, res) => {
 	const { attendance_data, } = history[0];
 	attendance_data.forEach(stud => {
 		if (stud.name === reqStud.name) {
-			studentStatus = helpers.assessAttendanceStatus(stud, reqStud.time);
+			studentStatus = helpers.assessTodayStatus(stud, reqStud.time);
 		}
 	});
 

@@ -48,10 +48,10 @@
       {
         "name": "5b7ab1957c9b3c63007d5c8c",
         "times_stamp": {
-          "time_in": "11:16:25",
-          "time_out": "17:02:25",
+          "time_in": "",
+          "time_out": "",
           "late": true,
-          "left_early": false
+          "left_early": true
         }      
       },
       {
@@ -85,7 +85,7 @@
     {
       "_id": "5b7aa4546cc5c58dc715cc45",
       "date": "Thu Aug 16 2018",
-      "attendanceData": [
+      "attendance_data": [
         {
           "name": "5b7ab1957c9b3c63007d5c8c",
           "times_stamp": {
