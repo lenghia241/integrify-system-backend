@@ -91,7 +91,17 @@ In this API you have access to array of users with following keys
         "current": false,
         "description": ""
       }
- ]
+ ],
+"languages": [string],
+"examples_of_work": [
+{
+"title": "",
+"status": ,
+"github_link": ""
+}
+],
+date:""
+
 ###### Single user profile 
 
 * GET [https://integrify.network/api/profiles/:id](https://integrify.network/api/profiles/5b7ab1957c9b3c63007d5c8c)
@@ -141,10 +151,8 @@ In this API you can have access to following keys
 "duedate": "",
 "titleOfAssignment": "",
 "description": "",
-"submitted": boolean
+"submitted": boolean,
+"githublink_for_assignment":""
 }
 Here id if for particular assignment.
-
-
-
 
