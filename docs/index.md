@@ -171,7 +171,7 @@ In this API you can have access to following keys
     "titleOfAssignment": "",
     "description": "",
     "submitted": boolean,
-    "githubLinkForAssignment":""
+    "githubLink":""
 
     }
 
