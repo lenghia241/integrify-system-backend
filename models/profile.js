@@ -29,7 +29,7 @@ const projectSchema = new Schema({
 const profileSchema = new Schema({
 	user: {
 		type: Schema.Types.ObjectId,
-		ref: "users",
+		ref: "User",
 	},
 	role: {
 		type: String,
@@ -53,4 +53,4 @@ const profileSchema = new Schema({
 	},
 });
 
-module.exports = mongoose.model("Profiles", profileSchema);
+module.exports = mongoose.model("Profile", profileSchema);
