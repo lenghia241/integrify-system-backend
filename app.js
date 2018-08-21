@@ -14,7 +14,7 @@ const attendanceRouter = require("./routes/attendance");
 const baseRouter = require("./routes/base");
 
 const keys = require("./config/keys");
-const attendence = require("./schedule/cron");
+const attendance = require("./schedule/cron");
 
 const app = express();
 
