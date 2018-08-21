@@ -10,8 +10,8 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const dashboardRouter = require("./routes/dashboard");
 const profilesRouter = require("./routes/profiles");
-const baseRouter = require("./routes/base");
 const attendanceRouter = require("./routes/attendance");
+const baseRouter = require("./routes/base");
 
 const keys = require("./config/keys");
 const attendence = require("./schedule/cron");
