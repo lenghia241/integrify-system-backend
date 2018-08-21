@@ -4,10 +4,10 @@ const schedule = require("node-schedule");
 const moment = require("moment");
 
 const rule = "0 0 0 * * *";
-const attendence = schedule.scheduleJob(rule, function() {
+const attendance = schedule.scheduleJob(rule, function() {
 	const history = JSON.parse(
 		fs.readFileSync(
-			path.join(`${__dirname}/../data/attendencejson/history.json`)
+			path.join(`${__dirname}/../data/attendancejson/history.json`)
 		)
 	);
 	const date = moment().format("MMM Do YY");
@@ -55,9 +55,9 @@ const attendence = schedule.scheduleJob(rule, function() {
 
 	history.unshift(today);
 	fs.writeFileSync(
-		path.join(`${__dirname}/../data/attendencejson/history.json`), JSON.stringify(history, undefined, 2)
+		path.join(`${__dirname}/../data/attendancejson/history.json`), JSON.stringify(history, undefined, 2)
 	);
 
 });
 
-module.exports = attendence;
+module.exports = attendance;
