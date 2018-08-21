@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "server": "nodemon ./bin/www"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -17,7 +16,6 @@
   },
   "homepage": "https://github.com/Integrify-Finland/integrify-system-backend#readme",
   "dependencies": {
-    "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.4",

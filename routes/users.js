@@ -3,10 +3,9 @@ const router = express.Router();
 const nodemailer = require("nodemailer");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const axios = require("axios");
 const credentials = require("../config/credentials");
-const TempUser = require("../models/tempUser");
 const User = require("../models/user");
+const Profile = require("../models/profile");
 const validateTempUser = require("../validation/temp-signup");
 const validateSignup = require("../validation/signup");
 const validateLogin = require("../validation/login");
@@ -23,22 +22,36 @@ router.post("/temp-signup", (req, res) => {
 		return res.status(400).json(errors);
 	}
 	const { firstname, lastname, email, } = req.body;
-	TempUser.findOne({ email, }).then(tempUser => {
-		if (tempUser) {
-			errors.email = "Email already exists";
+	User.findOne({ email, }).then(user => {
+		if (user) {
+			errors.msg = "You have already registered";
 			return res.status(409).json(errors);
 		}
-		const newTempUser = new TempUser({
-			firstname,
-			lastname,
-			email,
+		TempUser.findOne({ email, }).then(tempUser => {
+			if (tempUser) {
+				errors.email = "Email already exists";
+				return res.status(409).json(errors);
+			}
+			const newTempUser = new TempUser({
+				firstname,
+				lastname,
+				email,
+			});
+			newTempUser
+				.save()
+				.then(tempUser => res.json(tempUser))
+				.catch(e => res.status(400).json({ msg: "Failed to save new data", }));
 		});
-		newTempUser
-			.save()
-			.then(tempUser => res.json(tempUser))
-			.catch(e => res.status(400).json({ msg: "Failed to save new data", }));
 	});
 });
+
+// router.post("/signup/temp", (req, res) => {
+// 	const { errors, isValid, } = validateTempUser(req.body);
+// 	if (!isValid) {
+// 		return res.status(400).json(errors);
+// 	}
+// 	User.find;
+// });
 
 //GET all tempUsers
 router.get("/temp-signup", (req, res) => {
@@ -60,7 +73,7 @@ router.delete("/temp-signup/:id", (req, res) => {
 		);
 });
 
-//POST send email verifycation to tempUser accepted by admin
+//POST send email verification to tempUser accepted by admin
 router.post("/temp-signup/:id", (req, res) => {
 	const { id, } = req.params;
 	const { user, pass, } = credentials;
@@ -71,7 +84,7 @@ router.post("/temp-signup/:id", (req, res) => {
 	if (!batch) {
 		return res.status(400).json({ batch: "Batch is required", });
 	}
-	const rand = Math.random();
+	const rand = Math.random().toString(36);
 	TempUser.findById(id)
 		.then(tempUser => {
 			const { firstname, lastname, email, } = tempUser;
@@ -162,15 +175,9 @@ router.put("/signup", (req, res) => {
 					if (err) throw err;
 					User.findByIdAndUpdate(user._id, { password: hash, }, { new: true, })
 						.then(user => {
-							// axios
-							// 	.post(`${req.protocol}://${req.get("host")}/users/login`, {
-							// 		email,
-							// 		password,
-							// 	})
-							// 	.then(data => res.send(data.data));
 							return res.json(user);
 						})
-						.catch(e =>
+						.catch(() =>
 							res.status(400).json({ msg: "Password cannot be updated", })
 						);
 				});
@@ -189,7 +196,6 @@ router.get("/signup", (req, res) => {
 
 //POST login user
 router.post("/login", (req, res) => {
-	console.log(req.body);
 	const { email, password, } = req.body;
 	const { errors, isValid, } = validateLogin(req.body);
 	if (!isValid) {
@@ -197,7 +203,6 @@ router.post("/login", (req, res) => {
 	}
 	User.findOne({ email, })
 		.then(user => {
-			console.log(user.password);
 			const regex = /[$a-zA-Z]/g;
 			if (!regex.test(user.password)) {
 				return res
@@ -206,7 +211,6 @@ router.post("/login", (req, res) => {
 			}
 			bcrypt.compare(password, user.password).then(isMatch => {
 				if (isMatch) {
-					console.log(isMatch);
 					const { id, firstname, role, } = user;
 					const payload = { id, firstname, role, };
 					const token = jwt.sign(payload, credentials.secretOrKey, {
