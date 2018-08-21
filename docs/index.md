@@ -104,7 +104,8 @@ In this API you have access to array of users with following keys
         }
     ],
     date:""
-}
+    
+     }
 
 ###### Single user profile 
 
@@ -133,7 +134,8 @@ In this API you can access to
     "eventUrl": "",
     "time": "",
     "status": ""
-}
+    
+     }
 
 Here id and  title indicated for particular event's.
 
@@ -142,7 +144,7 @@ List of Studysync
 
 In this you can have access to following keys
 
-{
+    {
 
     "_id": "",
     "firstName": "",
@@ -150,7 +152,8 @@ In this you can have access to following keys
     "date": "",
     "title": "",
     "description": ""
-}
+
+    }
 
 id,firstname and lastname indicates user details who did studysync
 
@@ -160,8 +163,8 @@ List of Assignments
 
 In this API you can have access to following keys
 
-{
-    
+    {
+
     "_id": "",
     "date": "",
     "dueDate": "",
@@ -169,7 +172,8 @@ In this API you can have access to following keys
     "description": "",
     "submitted": boolean,
     "githubLinkForAssignment":""
-}
+
+    }
 
 Here id if for particular assignment.
 
