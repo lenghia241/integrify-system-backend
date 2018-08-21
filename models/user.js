@@ -21,6 +21,7 @@ const userSchema = new Schema({
 	accepted: {
 		type: Boolean,
 		required: true,
+		index: true,
 	},
 	date: {
 		type: Date,
