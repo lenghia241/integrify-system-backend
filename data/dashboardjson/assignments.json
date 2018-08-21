@@ -1,65 +1,65 @@
 [
-    {
-      "_id": "5b76a781ae14f08d3c371322",
-      "date": "Fri Aug 17 2018 11:46:25 GMT+0300 (Eastern European Summer Time)",
-      "duedate": "Fri Aug 18 2018 14:46:25 GMT+0300 (Eastern European Summer Time)",
-      "titleOfAssignment": "Lorem ex",
-      "description": "id anim aliqua",
-      "githublink_for_assignment": "https://github.com/firstname/assignment_name",
-      "submitted": false
-    },
-    {
-      "_id": "5b76a781b153f60a31a21413",
-      "date": "Fri Aug 17 2018 12:46:25 GMT+0300 (Eastern European Summer Time)",
-      "duedate": "Fri Aug 19 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
-      "titleOfAssignment": "cillum est",
-      "description": "duis cillum in",
-      "githublink_for_assignment": "https://github.com/firstname/assignment_name",
-      "submitted": false
-    },
-    {
-      "_id": "5b76a7817e66418184629882",
-      "date": "Fri Aug 17 2018 13:50:25 GMT+0300 (Eastern European Summer Time)",
-      "duedate": "Fri Aug 20 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
-      "titleOfAssignment": "non veniam",
-      "description": "reprehenderit enim tempor",
-      "githublink_for_assignment": "https://github.com/firstname/assignment_name",
-      "submitted": false
-    },
-    {
-      "_id": "5b76a781e8e769a37460dbc7",
-      "date": "Fri Aug 17 2018 17:46:25 GMT+0300 (Eastern European Summer Time)",
-      "duedate": "Fri Aug 20 2018 20:46:25 GMT+0300 (Eastern European Summer Time)",
-      "titleOfAssignment": "sunt in",
-      "description": "duis ullamco occaecat",
-      "githublink_for_assignment": "https://github.com/firstname/assignment_name",
-      "submitted": false
-    },
-    {
-      "_id": "5b76a781436cdce3566fb5c9",
-      "date": "Fri Aug 17 2018 18:46:25 GMT+0300 (Eastern European Summer Time)",
-      "duedate": "Fri Aug 21 2018 19:46:25 GMT+0300 (Eastern European Summer Time)",
-      "titleOfAssignment": "in consectetur",
-      "description": "proident aliqua anim",
-      "githublink_for_assignment": "https://github.com/firstname/assignment_name",
-      "submitted": false
-    },
-    {
-      "_id": "5b76a781499b04a0c7a6662a",
-      "date": "Fri Aug 17 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
-      "duedate": "Fri Aug 22 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
-      "titleOfAssignment": "aliquip fugiat",
-      "description": "id laborum in",
-      "githublink_for_assignment": "https://github.com/firstname/assignment_name",
-      "submitted": false
-    },
-    {
-      "_id": "5b76a7818788394d3df5fbf8",
-      "date": "Fri Aug 17 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
-      "duedate": "Fri Aug 20 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
-      "titleOfAssignment": "do commodo",
-      "description": "qui adipisicing cillum",
-      "githublink_for_assignment": "https://github.com/firstname/assignment_name",
-      "submitted": false
-    }
-  ]
+  {
+    "_id": "5b76a781ae14f08d3c371322",
+    "date": "Fri Aug 17 2018 11:46:25 GMT+0300 (Eastern European Summer Time)",
+    "dueDate": "Fri Aug 18 2018 14:46:25 GMT+0300 (Eastern European Summer Time)",
+    "titleOfAssignment": "Lorem ex",
+    "description": "id anim aliqua",
+    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "submitted": false
+  },
+  {
+    "_id": "5b76a781b153f60a31a21413",
+    "date": "Fri Aug 17 2018 12:46:25 GMT+0300 (Eastern European Summer Time)",
+    "dueDate": "Fri Aug 19 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+    "titleOfAssignment": "cillum est",
+    "description": "duis cillum in",
+    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "submitted": false
+  },
+  {
+    "_id": "5b76a7817e66418184629882",
+    "date": "Fri Aug 17 2018 13:50:25 GMT+0300 (Eastern European Summer Time)",
+    "dueDate": "Fri Aug 20 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+    "titleOfAssignment": "non veniam",
+    "description": "reprehenderit enim tempor",
+    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "submitted": false
+  },
+  {
+    "_id": "5b76a781e8e769a37460dbc7",
+    "date": "Fri Aug 17 2018 17:46:25 GMT+0300 (Eastern European Summer Time)",
+    "dueDate": "Fri Aug 20 2018 20:46:25 GMT+0300 (Eastern European Summer Time)",
+    "titleOfAssignment": "sunt in",
+    "description": "duis ullamco occaecat",
+    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "submitted": false
+  },
+  {
+    "_id": "5b76a781436cdce3566fb5c9",
+    "date": "Fri Aug 17 2018 18:46:25 GMT+0300 (Eastern European Summer Time)",
+    "dueDate": "Fri Aug 21 2018 19:46:25 GMT+0300 (Eastern European Summer Time)",
+    "titleOfAssignment": "in consectetur",
+    "description": "proident aliqua anim",
+    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "submitted": false
+  },
+  {
+    "_id": "5b76a781499b04a0c7a6662a",
+    "date": "Fri Aug 17 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+    "dueDate": "Fri Aug 22 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+    "titleOfAssignment": "aliquip fugiat",
+    "description": "id laborum in",
+    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "submitted": false
+  },
+  {
+    "_id": "5b76a7818788394d3df5fbf8",
+    "date": "Fri Aug 17 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+    "dueDate": "Fri Aug 20 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+    "titleOfAssignment": "do commodo",
+    "description": "qui adipisicing cillum",
+    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "submitted": false
+  }
+]
