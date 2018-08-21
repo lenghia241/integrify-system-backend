@@ -10,7 +10,6 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const dashboardRouter = require("./routes/dashboard");
 const profileRouter = require("./routes/profile");
-const attendanceRouter = require("./routes/attendance");
 const baseRouter = require("./routes/base");
 
 const keys = require("./config/keys");
@@ -46,8 +45,6 @@ app.use("/api/dashboard", dashboardRouter);
 app.use("/v1/dashboard", dashboardRouter);
 app.use("/api/profile", profileRouter);
 app.use("/v1/profile", profileRouter);
-app.use("/api/attendance", attendanceRouter);
-app.use("/v1/attendance", attendanceRouter);
 app.use("*", baseRouter);
 
 // catch 404 and forward to error handler
