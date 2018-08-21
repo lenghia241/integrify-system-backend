@@ -5,7 +5,7 @@
     "dueDate": "Fri Aug 18 2018 14:46:25 GMT+0300 (Eastern European Summer Time)",
     "titleOfAssignment": "Lorem ex",
     "description": "id anim aliqua",
-    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "githubLink": "https://github.com/firstname/assignment_name",
     "submitted": false
   },
   {
@@ -14,7 +14,7 @@
     "dueDate": "Fri Aug 19 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
     "titleOfAssignment": "cillum est",
     "description": "duis cillum in",
-    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "githubLink": "https://github.com/firstname/assignment_name",
     "submitted": false
   },
   {
@@ -23,7 +23,7 @@
     "dueDate": "Fri Aug 20 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
     "titleOfAssignment": "non veniam",
     "description": "reprehenderit enim tempor",
-    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "githubLink": "https://github.com/firstname/assignment_name",
     "submitted": false
   },
   {
@@ -32,7 +32,7 @@
     "dueDate": "Fri Aug 20 2018 20:46:25 GMT+0300 (Eastern European Summer Time)",
     "titleOfAssignment": "sunt in",
     "description": "duis ullamco occaecat",
-    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "githubLink": "https://github.com/firstname/assignment_name",
     "submitted": false
   },
   {
@@ -41,7 +41,7 @@
     "dueDate": "Fri Aug 21 2018 19:46:25 GMT+0300 (Eastern European Summer Time)",
     "titleOfAssignment": "in consectetur",
     "description": "proident aliqua anim",
-    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "githubLink": "https://github.com/firstname/assignment_name",
     "submitted": false
   },
   {
@@ -50,7 +50,7 @@
     "dueDate": "Fri Aug 22 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
     "titleOfAssignment": "aliquip fugiat",
     "description": "id laborum in",
-    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "githubLink": "https://github.com/firstname/assignment_name",
     "submitted": false
   },
   {
@@ -59,7 +59,7 @@
     "dueDate": "Fri Aug 20 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
     "titleOfAssignment": "do commodo",
     "description": "qui adipisicing cillum",
-    "githubLinkForAssignment": "https://github.com/firstname/assignment_name",
+    "githubLink": "https://github.com/firstname/assignment_name",
     "submitted": false
   }
 ]
