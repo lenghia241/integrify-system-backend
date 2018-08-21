@@ -1,107 +1,82 @@
 [
-    {
-      "_id": "5b76a839b358e601db8f297d",
-      "description": "voluptate ex ullamco sit ad culpa aute occaecat sunt velit",
-      "venue": {
-        "address": "228 Richards Street",
-        "zip": 4390,
-        "name": "reprehenderit",
-        "state": "Ohio",
-        "city": "Blanco",
-        "country": "Hailesboro"
-      },
-      "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
-      "time": "2018-12-13T09:09:07 -02:00",
-      "status": "upcoming"
+  {
+    "_id": "5b7a9aaddc946c31d843656e",
+    "title": "culpa velit Lorem velit aliquip",
+    "description": "culpa nostrud ad dolor id amet qui do ex aliquip",
+    "venue": {
+      "address": "744 Noll Street",
+      "zip": 5217,
+      "name": "culpa",
+      "state": "Florida",
+      "city": "Mulberry",
+      "country": "Bainbridge"
     },
-    {
-      "_id": "5b76a839ce3295a779ba8a99",
-      "description": "nostrud ut laboris dolore occaecat esse consequat sit laborum in",
-      "venue": {
-        "address": "523 Sullivan Street",
-        "zip": 5204,
-        "name": "aliquip",
-        "state": "Marshall Islands",
-        "city": "Como",
-        "country": "Choctaw"
-      },
-      "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
-      "time": "2018-10-29T09:11:20 -02:00",
-      "status": "upcoming"
+    "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+    "time": "2018-08-27T03:25:28 -03:00",
+    "status": "upcoming"
+  },
+  {
+    "_id": "5b7a9aad94c2cf7f51e355d2",
+    "title": "officia culpa ea excepteur ipsum",
+    "description": "laboris do proident exercitation aliquip tempor id ea in culpa",
+    "venue": {
+      "address": "134 Ralph Avenue",
+      "zip": 4610,
+      "name": "consequat",
+      "state": "Kansas",
+      "city": "Roland",
+      "country": "Farmington"
     },
-    {
-      "_id": "5b76a839ddf4b4bc8ca4eba8",
-      "description": "laborum in consectetur sint labore aute cillum consequat minim sint",
-      "venue": {
-        "address": "478 Irwin Street",
-        "zip": 2343,
-        "name": "dolor",
-        "state": "Illinois",
-        "city": "Bonanza",
-        "country": "Tivoli"
-      },
-      "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
-      "time": "2018-09-15T12:43:03 -03:00",
-      "status": "upcoming"
+    "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+    "time": "2018-08-21T11:22:38 -03:00",
+    "status": "upcoming"
+  },
+  {
+    "_id": "5b7a9aad93252f48822d9d07",
+    "title": "fugiat esse qui non sunt",
+    "description": "sint sint ut eiusmod ut reprehenderit pariatur do dolore consequat",
+    "venue": {
+      "address": "285 Colin Place",
+      "zip": 4699,
+      "name": "qui",
+      "state": "Virgin Islands",
+      "city": "Dixie",
+      "country": "Hartsville/Hartley"
     },
-    {
-      "_id": "5b76a8392afae867fba0d03f",
-      "description": "nisi non nisi nisi exercitation excepteur eu excepteur sunt nisi",
-      "venue": {
-        "address": "839 Doone Court",
-        "zip": 3807,
-        "name": "consectetur",
-        "state": "New Hampshire",
-        "city": "Chemung",
-        "country": "Elbert"
-      },
-      "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
-      "time": "2018-09-09T10:50:16 -03:00",
-      "status": "upcoming"
+    "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+    "time": "2018-10-25T12:23:27 -03:00",
+    "status": "upcoming"
+  },
+  {
+    "_id": "5b7a9aadfd370180a100daff",
+    "title": "laborum voluptate ipsum nulla ad",
+    "description": "ex esse velit velit occaecat voluptate consequat eiusmod consequat pariatur",
+    "venue": {
+      "address": "263 Pioneer Street",
+      "zip": 1943,
+      "name": "est",
+      "state": "Delaware",
+      "city": "Kraemer",
+      "country": "Gilgo"
     },
-    {
-      "_id": "5b76a8391b50dd48b2ed65d9",
-      "description": "proident esse laboris nisi labore fugiat in ullamco sit excepteur",
-      "venue": {
-        "address": "699 Tillary Street",
-        "zip": 7390,
-        "name": "dolor",
-        "state": "Guam",
-        "city": "Greer",
-        "country": "Crown"
-      },
-      "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
-      "time": "2018-12-07T06:05:21 -02:00",
-      "status": "upcoming"
+    "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+    "time": "2018-12-17T02:18:47 -02:00",
+    "status": "upcoming"
+  },
+  {
+    "_id": "5b7a9aadd44b4d82445e3d00",
+    "title": "deserunt amet sit eiusmod sint",
+    "description": "officia elit minim consectetur cillum Lorem nisi sint cillum consequat",
+    "venue": {
+      "address": "697 Melba Court",
+      "zip": 8364,
+      "name": "eu",
+      "state": "Ohio",
+      "city": "Weogufka",
+      "country": "Jackpot"
     },
-    {
-      "_id": "5b76a839aa684497c7b3009c",
-      "description": "eu magna ut occaecat cillum deserunt dolore cillum qui tempor",
-      "venue": {
-        "address": "479 Vandervoort Place",
-        "zip": 2572,
-        "name": "ut",
-        "state": "Oregon",
-        "city": "Waterloo",
-        "country": "Allamuchy"
-      },
-      "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
-      "time": "2018-11-06T04:46:43 -02:00",
-      "status": "upcoming"
-    },
-    {
-      "_id": "5b76a8399d629e433407d4c1",
-      "description": "adipisicing nisi excepteur commodo magna aute dolore mollit incididunt labore",
-      "venue": {
-        "address": "158 Amber Street",
-        "zip": 7630,
-        "name": "ipsum",
-        "state": "Rhode Island",
-        "city": "Elfrida",
-        "country": "Bladensburg"
-      },
-      "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
-      "time": "2018-10-20T10:52:04 -03:00",
-      "status": "upcoming"
-    }
-  ]
+    "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+    "time": "2018-10-01T10:11:18 -03:00",
+    "status": "upcoming"
+  }
+]
