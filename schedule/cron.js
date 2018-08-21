@@ -3,7 +3,7 @@ const path = require("path");
 const schedule = require("node-schedule");
 const moment = require("moment");
 
-const rule = "*/30 * * * *";
+const rule = "0 0 0 * * *";
 const attendence = schedule.scheduleJob(rule, function() {
 	const history = JSON.parse(
 		fs.readFileSync(
