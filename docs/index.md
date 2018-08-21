@@ -59,7 +59,7 @@ This is API version1. In this we serve mockdata in json file...
 
 In this API you have access to array of users with following keys
 
-{
+    {
 
     "_id": "",
     "firstName": "",
@@ -118,7 +118,7 @@ List of events
 
 In this API you can access to 
 
-{
+    {
 
     "_id": "",
     "title": "",
@@ -135,7 +135,7 @@ In this API you can access to
     "time": "",
     "status": ""
     
-     }
+    }
 
 Here id and  title indicated for particular event's.
 
