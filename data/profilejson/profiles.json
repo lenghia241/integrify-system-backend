@@ -1,10 +1,9 @@
 [
   {
     "_id": "5b7ab1957c9b3c63007d5c8c",
-    "firstname": "Hazel",
-    "lastname": "Mercer",
+    "firstName": "Hazel",
+    "lastName": "Mercer",
     "email": "hazelmercer@sureplex.com",
-    "password": "password",
     "role": "student",
     "batch": "Spring 2018",
     "bio": "elit laborum incididunt esse do commodo Lorem aute ad aute sunt officia Lorem consectetur sunt eu commodo cillum sint eu",
@@ -16,7 +15,7 @@
       {
         "school": "in cupidatat proident",
         "degree": "labore tempor",
-        "field_of_study": "sunt nulla veniam cillum minim",
+        "fieldOfStudy": "sunt nulla veniam cillum minim",
         "from": "2015-04-23T02:18:12 -03:00",
         "to": "2018-04-19T12:03:23 -03:00",
         "current": false,
@@ -25,7 +24,7 @@
       {
         "school": "proident veniam dolor",
         "degree": "nostrud reprehenderit",
-        "field_of_study": "reprehenderit consectetur et cillum magna",
+        "fieldOfStudy": "reprehenderit consectetur et cillum magna",
         "from": "2017-09-24T10:42:27 -03:00",
         "to": "2018-01-04T06:19:39 -02:00",
         "current": false,
@@ -53,26 +52,25 @@
       }
     ],
     "languages": ["aute occaecat", "dolore ex"],
-    "examples_of_work": [
+    "examplesOfWork": [
       {
         "title": "qui consequat",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
         "title": "qui velit",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
     "date": "2018-03-18T03:13:02 -02:00"
   },
   {
     "_id": "5b7ab1952cc5b5a552cfda72",
-    "firstname": "Carlene",
-    "lastname": "Faulkner",
+    "firstName": "Carlene",
+    "lastName": "Faulkner",
     "email": "carlenefaulkner@aquazure.com",
-    "password": "password",
     "role": "student",
     "batch": "Spring 2018",
     "bio": "voluptate enim ipsum eu exercitation laborum duis eiusmod minim duis Lorem Lorem fugiat tempor sint culpa consectetur consequat officia ipsum",
@@ -84,7 +82,7 @@
       {
         "school": "ex pariatur deserunt",
         "degree": "sunt do",
-        "field_of_study": "sit tempor elit adipisicing commodo",
+        "fieldOfStudy": "sit tempor elit adipisicing commodo",
         "from": "2014-03-15T11:51:06 -02:00",
         "to": "2018-03-19T05:16:37 -02:00",
         "current": false,
@@ -93,7 +91,7 @@
       {
         "school": "sit exercitation Lorem",
         "degree": "incididunt reprehenderit",
-        "field_of_study": "proident aliqua id est aliqua",
+        "fieldOfStudy": "proident aliqua id est aliqua",
         "from": "2015-04-09T11:22:33 -03:00",
         "to": "2018-03-20T01:10:38 -02:00",
         "current": false,
@@ -121,26 +119,25 @@
       }
     ],
     "languages": ["aute ut", "nisi excepteur"],
-    "examples_of_work": [
+    "examplesOfWork": [
       {
         "title": "cillum pariatur",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
         "title": "ea sunt",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
     "date": "2018-03-09T07:20:37 -02:00"
   },
   {
     "_id": "5b7ab1953129baf45fac3a05",
-    "firstname": "Celeste",
-    "lastname": "Larsen",
+    "firstName": "Celeste",
+    "lastName": "Larsen",
     "email": "celestelarsen@codax.com",
-    "password": "password",
     "role": "student",
     "batch": "Spring 2018",
     "bio": "esse elit ea duis et sit ea ullamco dolore labore pariatur fugiat tempor commodo magna reprehenderit est reprehenderit occaecat nisi",
@@ -152,7 +149,7 @@
       {
         "school": "voluptate pariatur aute",
         "degree": "ut ad",
-        "field_of_study": "dolore aute quis ipsum aliquip",
+        "fieldOfStudy": "dolore aute quis ipsum aliquip",
         "from": "2016-07-19T01:08:32 -03:00",
         "to": "2018-03-03T06:48:57 -02:00",
         "current": false,
@@ -161,7 +158,7 @@
       {
         "school": "sint velit dolor",
         "degree": "consequat fugiat",
-        "field_of_study": "aliquip commodo exercitation sunt labore",
+        "fieldOfStudy": "aliquip commodo exercitation sunt labore",
         "from": "2015-05-01T08:42:43 -03:00",
         "to": "2018-03-04T06:04:59 -02:00",
         "current": false,
@@ -189,26 +186,25 @@
       }
     ],
     "languages": ["sunt voluptate", "deserunt consequat"],
-    "examples_of_work": [
+    "examplesOfWork": [
       {
         "title": "elit do",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
         "title": "quis quis",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
     "date": "2018-06-16T02:12:35 -03:00"
   },
   {
     "_id": "5b7ab195f176fd2767d3a954",
-    "firstname": "Coleman",
-    "lastname": "Carlson",
+    "firstName": "Coleman",
+    "lastName": "Carlson",
     "email": "colemancarlson@emergent.com",
-    "password": "password",
     "role": "student",
     "batch": "Spring 2018",
     "bio": "nostrud fugiat culpa veniam mollit sint anim veniam pariatur cupidatat labore ut elit voluptate proident eu officia ut culpa cupidatat",
@@ -220,7 +216,7 @@
       {
         "school": "minim officia laborum",
         "degree": "ipsum sunt",
-        "field_of_study": "aliquip nulla Lorem deserunt consequat",
+        "fieldOfStudy": "aliquip nulla Lorem deserunt consequat",
         "from": "2016-08-22T11:39:54 -03:00",
         "to": "2018-04-01T04:54:55 -03:00",
         "current": false,
@@ -229,7 +225,7 @@
       {
         "school": "aliqua ut nulla",
         "degree": "nisi cillum",
-        "field_of_study": "pariatur nostrud ea pariatur velit",
+        "fieldOfStudy": "pariatur nostrud ea pariatur velit",
         "from": "2018-01-14T11:20:28 -02:00",
         "to": "2018-04-01T01:08:10 -03:00",
         "current": false,
@@ -257,26 +253,25 @@
       }
     ],
     "languages": ["ex anim", "sunt pariatur"],
-    "examples_of_work": [
+    "examplesOfWork": [
       {
         "title": "laboris tempor",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
         "title": "nostrud id",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
     "date": "2018-01-21T03:53:00 -02:00"
   },
   {
     "_id": "5b7ab1954b5e962ac5edcc7c",
-    "firstname": "Crystal",
-    "lastname": "Ayers",
+    "firstName": "Crystal",
+    "lastName": "Ayers",
     "email": "crystalayers@imperium.com",
-    "password": "password",
     "role": "student",
     "batch": "Spring 2018",
     "bio": "pariatur proident et ipsum officia aute Lorem mollit mollit proident nulla irure et nisi dolor est veniam ut ipsum magna",
@@ -288,7 +283,7 @@
       {
         "school": "do do elit",
         "degree": "non est",
-        "field_of_study": "minim duis amet deserunt amet",
+        "fieldOfStudy": "minim duis amet deserunt amet",
         "from": "2017-10-28T07:04:44 -03:00",
         "to": "2018-04-25T05:35:41 -03:00",
         "current": false,
@@ -297,7 +292,7 @@
       {
         "school": "dolore cillum nisi",
         "degree": "nostrud nostrud",
-        "field_of_study": "fugiat commodo reprehenderit cupidatat incididunt",
+        "fieldOfStudy": "fugiat commodo reprehenderit cupidatat incididunt",
         "from": "2014-09-16T11:34:46 -03:00",
         "to": "2018-06-12T01:09:36 -03:00",
         "current": false,
@@ -325,26 +320,25 @@
       }
     ],
     "languages": ["reprehenderit id", "fugiat aliqua"],
-    "examples_of_work": [
+    "examplesOfWork": [
       {
         "title": "nulla irure",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
         "title": "excepteur aute",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
     "date": "2018-07-09T07:19:16 -03:00"
   },
   {
     "_id": "5b7ab19537f399405b46d22c",
-    "firstname": "Suarez",
-    "lastname": "Slater",
+    "firstName": "Suarez",
+    "lastName": "Slater",
     "email": "suarezslater@furnigeer.com",
-    "password": "password",
     "role": "student",
     "batch": "Spring 2018",
     "bio": "dolor culpa proident ullamco occaecat mollit adipisicing culpa eiusmod et dolor magna et proident incididunt ut non cupidatat consequat consequat",
@@ -356,7 +350,7 @@
       {
         "school": "cupidatat mollit magna",
         "degree": "ex in",
-        "field_of_study": "elit veniam officia nostrud fugiat",
+        "fieldOfStudy": "elit veniam officia nostrud fugiat",
         "from": "2017-01-29T06:25:48 -02:00",
         "to": "2018-07-02T04:08:49 -03:00",
         "current": false,
@@ -365,7 +359,7 @@
       {
         "school": "veniam adipisicing nostrud",
         "degree": "velit eu",
-        "field_of_study": "proident do enim pariatur excepteur",
+        "fieldOfStudy": "proident do enim pariatur excepteur",
         "from": "2014-12-09T02:03:11 -02:00",
         "to": "2018-02-14T10:18:34 -02:00",
         "current": false,
@@ -393,26 +387,25 @@
       }
     ],
     "languages": ["laborum commodo", "non non"],
-    "examples_of_work": [
+    "examplesOfWork": [
       {
         "title": "irure sit",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
         "title": "laboris deserunt",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
     "date": "2018-08-05T12:53:37 -03:00"
   },
   {
     "_id": "5b7ab195626e43e3786a5c93",
-    "firstname": "Tillman",
-    "lastname": "Ellison",
+    "firstName": "Tillman",
+    "lastName": "Ellison",
     "email": "tillmanellison@bluplanet.com",
-    "password": "password",
     "role": "student",
     "batch": "Spring 2018",
     "bio": "reprehenderit incididunt duis consequat duis nulla consectetur id laboris Lorem est do laborum nulla ut id nostrud anim nostrud exercitation",
@@ -424,7 +417,7 @@
       {
         "school": "nulla qui esse",
         "degree": "duis voluptate",
-        "field_of_study": "incididunt commodo officia do in",
+        "fieldOfStudy": "incididunt commodo officia do in",
         "from": "2016-07-03T09:32:15 -03:00",
         "to": "2018-05-24T01:35:15 -03:00",
         "current": false,
@@ -433,7 +426,7 @@
       {
         "school": "et consequat officia",
         "degree": "irure ut",
-        "field_of_study": "pariatur labore ex incididunt cupidatat",
+        "fieldOfStudy": "pariatur labore ex incididunt cupidatat",
         "from": "2017-09-21T05:46:24 -03:00",
         "to": "2018-08-15T03:29:16 -03:00",
         "current": false,
@@ -461,16 +454,16 @@
       }
     ],
     "languages": ["culpa voluptate", "incididunt non"],
-    "examples_of_work": [
+    "examplesOfWork": [
       {
         "title": "occaecat mollit",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
         "title": "magna ut",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
     "date": "2018-06-16T01:25:16 -03:00"
