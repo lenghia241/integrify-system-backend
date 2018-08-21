@@ -20,7 +20,7 @@ const app = express();
 app.use(cors());
 
 // mongoDB connection
-mongoose.connect(keys.mongoURI, {useNewUrlParser: true,});
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, });
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -38,7 +38,6 @@ app.use(express.urlencoded({ extended: false, }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// router setup
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/api/dashboard", dashboardRouter);
