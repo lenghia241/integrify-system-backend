@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 router.get("/:id/edit", (req, res) => {
 	const id = req.params.id;
 	const targetedProfile = profiles.filter((profile) => profile._id === id)[0];
-	res.send(`Edit Profile Form for user ${targetedProfile.firstname} ${targetedProfile.lastname}`);
+	res.send(`Edit Profile Form for user ${targetedProfile.firstName} ${targetedProfile.lastName}`);
 });
 
 // edit 1 profile
