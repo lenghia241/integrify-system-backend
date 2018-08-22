@@ -38,10 +38,10 @@ router.post("/assignments", upload.any(), (req, res) => {
 //Deleting one  assignment based on id
 router.delete("/assignments/:id", function(req, res) {
 	const id = req.params.id;
-	const remaining_assignments = assignments.filter(assignment => {
-		return assignment._id !== id;
-	});
-	res.send(remaining_assignments);
+	// const remaining_assignments = assignments.filter(assignment => {
+	// 	return assignment._id !== id;
+	// });
+	res.json(null);
 });
 
 //Edit and update of assignment
@@ -80,10 +80,10 @@ router.post("/studysync", upload.any(), (req, res) => {
 //Deleting one studysync
 router.delete("/studysync/:id", function(req, res) {
 	const id = req.params.id;
-	const remaining_studysync = studysync.filter(study => {
-		return study._id !== id;
-	});
-	res.send(remaining_studysync);
+	// const remaining_studysync = studysync.filter(study => {
+	// 	return study._id !== id;
+	// });
+	res.json(null);
 });
 //Edit and upadte studysync
 router.put("/studysync/:id", (req, res) => {
