@@ -56,13 +56,15 @@ This is API version1. In this we serve mockdata in json file...
 ###### List of users profiles
 
 * GET [https://integrify.network/api/profiles](https://integrify.network/api/profiles)
+
 In this API you have access to array of users with following keys
-{
+
+    {
+
     "_id": "",
-    "firstname": "",
-    "lastname": "",
+    "firstName": "",
+    "lastName": "",
     "email": "",
-    "password": "",
     "role": "",
     "batch": "",
     "bio": "",
@@ -71,18 +73,18 @@ In this API you have access to array of users with following keys
     "competences": [string],
     "skills": [string],
     "education": [
-      {
+        {
         "school": "",
         "degree": "",
-        "field_of_study": "",
+        "fieldOfStudy": "",
         "from": "",
         "to": "",
         "current": ,
         "description": ""
-      }
+        }
     ],
     "experience": [
-      {
+        {
         "title": "",
         "company": "",
         "location": "",
@@ -90,17 +92,19 @@ In this API you have access to array of users with following keys
         "to": "",
         "current": false,
         "description": ""
-      }
- ],
-"languages": [string],
-"examples_of_work": [
-{
-"title": "",
-"status": ,
-"github_link": ""
-}
-],
-date:""
+        }
+    ],
+    "languages": [string],
+    "examplesOfWork": [
+        {
+        "title": "",
+        "status": ,
+        "githubLink": ""
+        }
+    ],
+    date:""
+    
+     }
 
 ###### Single user profile 
 
@@ -110,49 +114,65 @@ date:""
 
 List of events
 * GET [https://integrify.network/api/dashboard/events](https://integrify.network/api/dashboard/events)
+
 In this API you can access to 
-{
-"_id": "",
-"title": "",
-"description": "",
-"venue": {
-"address": "",
-"zip": ,
-"name": "",
-"state": "",
-"city": "",
-"country": ""
-},
-"event_url": "",
-"time": "",
-"status": ""
-}
+
+    {
+
+    "_id": "",
+    "title": "",
+    "description": "",
+    "venue": {
+        "address": "",
+        "zip": ,
+        "name": "",
+        "state": "",
+        "city": "",
+        "country": ""
+    },
+    "eventUrl": "",
+    "time": "",
+    "status": ""
+    
+    }
+
 Here id and  title indicated for particular event's.
 
 List of Studysync
 * GET [https://integrify.network/api/dashboard/studysync](https://integrify.network/api/dashboard/studysync)
+
 In this you can have access to following keys
-{
-"_id": "",
-"firstname": "",
-"lastname": "",
-"date": "",
-"title": "",
-"description": ""
-}
-id,firstname and lastname indicates user details who did studysync
+
+    {
+
+    "_id": "",
+    "firstName": "",
+    "lastName": "",
+    "date": "",
+    "title": "",
+    "description": ""
+
+    }
+
+firstname and lastname indicates user details who did studysync
 
 
 List of Assignments
 * GET [https://integrify.network/api/dashboard/assignments](https://integrify.network/api/dashboard/assignments)
+
 In this API you can have access to following keys
-{"_id": "",
-"date": "",
-"duedate": "",
-"titleOfAssignment": "",
-"description": "",
-"submitted": boolean,
-"githublink_for_assignment":""
-}
+
+    {
+
+    "_id": "",
+    "date": "",
+    "dueDate": "",
+    "titleOfAssignment": "",
+    "description": "",
+    "submitted": boolean,
+    "githubLink":""
+
+    }
+
 Here id if for particular assignment.
 
