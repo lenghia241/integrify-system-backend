@@ -1,478 +1,404 @@
 [
   {
-    "_id": "5b7ab1957c9b3c63007d5c8c",
-    "firstname": "Hazel",
-    "lastname": "Mercer",
-    "email": "hazelmercer@sureplex.com",
-    "password": "password",
+    "_id": "5b7d16ae61bc909bc2d31ed4",
+    "firstname": "Garcia",
+    "lastname": "Page",
+    "email": "garciapage@zenthall.com",
     "role": "student",
     "batch": "Spring 2018",
-    "bio": "elit laborum incididunt esse do commodo Lorem aute ad aute sunt officia Lorem consectetur sunt eu commodo cillum sint eu",
+    "bio": "aliquip veniam exercitation anim veniam pariatur laborum voluptate mollit do minim magna elit in deserunt aliqua magna ipsum Lorem minim",
     "github": "http://github.com/lorem",
     "linkedin": "http://linkedin.com/in/lorem/",
     "competences": ["frontend", "backend"],
     "skills": ["JavaScript", "CSS", "HTML"],
     "education": [
       {
-        "school": "in cupidatat proident",
-        "degree": "labore tempor",
-        "field_of_study": "sunt nulla veniam cillum minim",
-        "from": "2015-04-23T02:18:12 -03:00",
-        "to": "2018-04-19T12:03:23 -03:00",
+        "school": "aute excepteur ad",
+        "degree": "irure sint",
+        "studyField": "reprehenderit ea non ut exercitation",
+        "startTime": "2016-04-13T11:31:48 -03:00",
+        "endTime": "2018-03-27T06:20:25 -03:00",
         "current": false,
-        "description": "deserunt occaecat cupidatat duis excepteur eu eiusmod excepteur ipsum exercitation"
+        "details": "reprehenderit cillum sunt officia consequat cillum exercitation officia consequat consequat"
       },
       {
-        "school": "proident veniam dolor",
-        "degree": "nostrud reprehenderit",
-        "field_of_study": "reprehenderit consectetur et cillum magna",
-        "from": "2017-09-24T10:42:27 -03:00",
-        "to": "2018-01-04T06:19:39 -02:00",
+        "school": "adipisicing sit ea",
+        "degree": "aliquip eu",
+        "studyField": "ullamco adipisicing ut ad voluptate",
+        "startTime": "2017-08-18T04:04:08 -03:00",
+        "endTime": "2018-06-20T06:58:19 -03:00",
         "current": false,
-        "description": "laborum fugiat esse amet in duis minim eiusmod culpa consequat"
+        "details": "sunt reprehenderit velit deserunt aliquip ad laboris minim tempor qui"
       }
     ],
-    "experience": [
+    "experiences": [
       {
-        "title": "duis occaecat",
-        "company": "MITROC",
-        "location": "velit consectetur",
-        "from": "2016-12-11T12:39:14 -02:00",
-        "to": "2018-01-05T04:22:15 -02:00",
+        "title": "nostrud Lorem",
+        "company": "GYNK",
+        "location": "sint pariatur",
+        "startTime": "2018-05-13T09:41:11 -03:00",
+        "endTime": "2018-02-06T04:54:18 -02:00",
         "current": false,
-        "description": "esse nisi ad minim tempor cillum excepteur duis proident elit"
+        "details": "ullamco ea consequat pariatur incididunt ea et Lorem exercitation ut"
       },
       {
-        "title": "amet aliqua",
-        "company": "AQUAZURE",
-        "location": "minim sint",
-        "from": "2018-01-14T07:32:12 -02:00",
-        "to": "2018-03-05T08:04:14 -02:00",
+        "title": "velit fugiat",
+        "company": "OPPORTECH",
+        "location": "id sit",
+        "startTime": "2017-03-22T01:24:53 -02:00",
+        "endTime": "2018-03-11T01:54:51 -02:00",
         "current": false,
-        "description": "velit irure est culpa nulla cupidatat reprehenderit ex dolore ex"
+        "details": "ex sunt incididunt culpa et excepteur amet exercitation elit minim"
       }
     ],
-    "languages": ["aute occaecat", "dolore ex"],
-    "examples_of_work": [
+    "languages": ["incididunt quis", "cupidatat enim"],
+    "projects": [
       {
-        "title": "qui consequat",
+        "title": "velit qui",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
-        "title": "qui velit",
+        "title": "veniam et",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
-    "date": "2018-03-18T03:13:02 -02:00"
+    "createdDate": "2018-03-31T06:32:18 -03:00"
   },
   {
-    "_id": "5b7ab1952cc5b5a552cfda72",
-    "firstname": "Carlene",
-    "lastname": "Faulkner",
-    "email": "carlenefaulkner@aquazure.com",
-    "password": "password",
+    "_id": "5b7d16aee80d13ff96057776",
+    "firstname": "Winifred",
+    "lastname": "Diaz",
+    "email": "winifreddiaz@opportech.com",
     "role": "student",
     "batch": "Spring 2018",
-    "bio": "voluptate enim ipsum eu exercitation laborum duis eiusmod minim duis Lorem Lorem fugiat tempor sint culpa consectetur consequat officia ipsum",
+    "bio": "proident tempor voluptate in id id mollit sint mollit exercitation cillum enim occaecat nulla ex sint qui sint in esse",
     "github": "http://github.com/lorem",
     "linkedin": "http://linkedin.com/in/lorem/",
     "competences": ["frontend", "backend"],
     "skills": ["JavaScript", "CSS", "HTML"],
     "education": [
       {
-        "school": "ex pariatur deserunt",
+        "school": "eu pariatur incididunt",
+        "degree": "sit amet",
+        "studyField": "exercitation sit in ullamco quis",
+        "startTime": "2018-08-03T11:32:15 -03:00",
+        "endTime": "2018-02-19T09:07:54 -02:00",
+        "current": false,
+        "details": "duis mollit eiusmod pariatur deserunt aliquip tempor minim nulla laborum"
+      },
+      {
+        "school": "nisi ex deserunt",
         "degree": "sunt do",
-        "field_of_study": "sit tempor elit adipisicing commodo",
-        "from": "2014-03-15T11:51:06 -02:00",
-        "to": "2018-03-19T05:16:37 -02:00",
+        "studyField": "exercitation id commodo ad deserunt",
+        "startTime": "2015-03-05T12:48:54 -02:00",
+        "endTime": "2018-06-02T02:16:49 -03:00",
         "current": false,
-        "description": "voluptate elit mollit sit aliqua dolore officia fugiat id minim"
-      },
-      {
-        "school": "sit exercitation Lorem",
-        "degree": "incididunt reprehenderit",
-        "field_of_study": "proident aliqua id est aliqua",
-        "from": "2015-04-09T11:22:33 -03:00",
-        "to": "2018-03-20T01:10:38 -02:00",
-        "current": false,
-        "description": "irure laboris enim ut nostrud deserunt minim id nulla tempor"
+        "details": "id pariatur aliquip id pariatur dolor duis excepteur id cillum"
       }
     ],
-    "experience": [
+    "experiences": [
       {
-        "title": "cillum deserunt",
-        "company": "UNEEQ",
-        "location": "magna eiusmod",
-        "from": "2015-06-20T04:06:29 -03:00",
-        "to": "2018-01-21T12:16:20 -02:00",
+        "title": "deserunt mollit",
+        "company": "ZENTRY",
+        "location": "deserunt dolor",
+        "startTime": "2016-10-03T12:51:08 -03:00",
+        "endTime": "2018-02-24T03:55:47 -02:00",
         "current": false,
-        "description": "dolor irure fugiat tempor dolor mollit sint ea aute est"
+        "details": "culpa reprehenderit ex elit irure occaecat aliqua et pariatur aute"
       },
       {
-        "title": "qui occaecat",
-        "company": "CODAX",
-        "location": "cupidatat esse",
-        "from": "2017-05-28T03:09:21 -03:00",
-        "to": "2018-03-04T03:01:22 -02:00",
+        "title": "esse laboris",
+        "company": "ANOCHA",
+        "location": "nisi consequat",
+        "startTime": "2018-04-01T11:53:55 -03:00",
+        "endTime": "2018-05-20T06:28:29 -03:00",
         "current": false,
-        "description": "occaecat ullamco do ipsum culpa eiusmod laborum excepteur ut labore"
+        "details": "eiusmod nulla amet ullamco aliquip mollit tempor aute mollit sit"
       }
     ],
-    "languages": ["aute ut", "nisi excepteur"],
-    "examples_of_work": [
+    "languages": ["in laborum", "officia ullamco"],
+    "projects": [
       {
-        "title": "cillum pariatur",
+        "title": "quis magna",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
-        "title": "ea sunt",
+        "title": "pariatur elit",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
-    "date": "2018-03-09T07:20:37 -02:00"
+    "createdDate": "2018-05-15T06:59:45 -03:00"
   },
   {
-    "_id": "5b7ab1953129baf45fac3a05",
-    "firstname": "Celeste",
-    "lastname": "Larsen",
-    "email": "celestelarsen@codax.com",
-    "password": "password",
+    "_id": "5b7d16ae1b73d01204776c72",
+    "firstname": "Laurie",
+    "lastname": "Taylor",
+    "email": "laurietaylor@anocha.com",
     "role": "student",
     "batch": "Spring 2018",
-    "bio": "esse elit ea duis et sit ea ullamco dolore labore pariatur fugiat tempor commodo magna reprehenderit est reprehenderit occaecat nisi",
+    "bio": "quis occaecat commodo anim nostrud pariatur voluptate excepteur nulla excepteur dolore et veniam tempor esse incididunt eiusmod aliquip sit officia",
     "github": "http://github.com/lorem",
     "linkedin": "http://linkedin.com/in/lorem/",
     "competences": ["frontend", "backend"],
     "skills": ["JavaScript", "CSS", "HTML"],
     "education": [
       {
-        "school": "voluptate pariatur aute",
-        "degree": "ut ad",
-        "field_of_study": "dolore aute quis ipsum aliquip",
-        "from": "2016-07-19T01:08:32 -03:00",
-        "to": "2018-03-03T06:48:57 -02:00",
+        "school": "sint non occaecat",
+        "degree": "eiusmod commodo",
+        "studyField": "dolore labore irure nulla commodo",
+        "startTime": "2017-01-04T11:38:45 -02:00",
+        "endTime": "2018-04-27T09:47:06 -03:00",
         "current": false,
-        "description": "exercitation velit ea minim minim et aliqua voluptate esse id"
+        "details": "incididunt nostrud cillum ad occaecat culpa laborum et magna aliqua"
       },
       {
-        "school": "sint velit dolor",
-        "degree": "consequat fugiat",
-        "field_of_study": "aliquip commodo exercitation sunt labore",
-        "from": "2015-05-01T08:42:43 -03:00",
-        "to": "2018-03-04T06:04:59 -02:00",
+        "school": "ut eu anim",
+        "degree": "ea amet",
+        "studyField": "consequat officia aute laborum quis",
+        "startTime": "2018-04-23T09:08:19 -03:00",
+        "endTime": "2018-07-11T05:54:48 -03:00",
         "current": false,
-        "description": "laboris et nulla incididunt sunt nulla anim esse in incididunt"
+        "details": "velit exercitation id esse irure ex anim dolore proident aliqua"
       }
     ],
-    "experience": [
+    "experiences": [
       {
-        "title": "ut in",
-        "company": "DATACATOR",
-        "location": "ea elit",
-        "from": "2015-06-13T07:25:44 -03:00",
-        "to": "2018-02-14T07:49:32 -02:00",
+        "title": "Lorem excepteur",
+        "company": "STROZEN",
+        "location": "cupidatat dolor",
+        "startTime": "2014-08-10T05:41:26 -03:00",
+        "endTime": "2018-05-01T08:51:36 -03:00",
         "current": false,
-        "description": "esse do officia ad officia Lorem nostrud ullamco elit exercitation"
+        "details": "aliqua culpa officia voluptate voluptate cupidatat mollit aliquip elit aliquip"
       },
       {
-        "title": "veniam aute",
-        "company": "EMERGENT",
-        "location": "anim eu",
-        "from": "2017-12-22T07:35:47 -02:00",
-        "to": "2018-04-03T01:55:03 -03:00",
+        "title": "commodo do",
+        "company": "NAXDIS",
+        "location": "ullamco cillum",
+        "startTime": "2016-10-17T12:16:23 -03:00",
+        "endTime": "2018-03-14T05:18:28 -02:00",
         "current": false,
-        "description": "consequat sunt labore sit laborum irure amet fugiat nostrud veniam"
+        "details": "officia sit ipsum ex adipisicing ullamco nisi excepteur quis minim"
       }
     ],
-    "languages": ["sunt voluptate", "deserunt consequat"],
-    "examples_of_work": [
+    "languages": ["incididunt duis", "exercitation in"],
+    "projects": [
       {
-        "title": "elit do",
+        "title": "anim cillum",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
-        "title": "quis quis",
+        "title": "qui incididunt",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
-    "date": "2018-06-16T02:12:35 -03:00"
+    "createdDate": "2018-03-05T04:15:16 -02:00"
   },
   {
-    "_id": "5b7ab195f176fd2767d3a954",
-    "firstname": "Coleman",
-    "lastname": "Carlson",
-    "email": "colemancarlson@emergent.com",
-    "password": "password",
+    "_id": "5b7d16ae62237eaa1d0de49e",
+    "firstname": "Carroll",
+    "lastname": "Jennings",
+    "email": "carrolljennings@naxdis.com",
     "role": "student",
     "batch": "Spring 2018",
-    "bio": "nostrud fugiat culpa veniam mollit sint anim veniam pariatur cupidatat labore ut elit voluptate proident eu officia ut culpa cupidatat",
+    "bio": "nulla incididunt fugiat minim ullamco velit pariatur esse velit nisi Lorem est amet dolore enim reprehenderit nulla duis dolore irure",
     "github": "http://github.com/lorem",
     "linkedin": "http://linkedin.com/in/lorem/",
     "competences": ["frontend", "backend"],
     "skills": ["JavaScript", "CSS", "HTML"],
     "education": [
       {
-        "school": "minim officia laborum",
-        "degree": "ipsum sunt",
-        "field_of_study": "aliquip nulla Lorem deserunt consequat",
-        "from": "2016-08-22T11:39:54 -03:00",
-        "to": "2018-04-01T04:54:55 -03:00",
+        "school": "amet est enim",
+        "degree": "laboris adipisicing",
+        "studyField": "sit ea labore aliquip mollit",
+        "startTime": "2016-12-05T09:15:43 -02:00",
+        "endTime": "2018-06-01T06:40:03 -03:00",
         "current": false,
-        "description": "in aliquip dolore aliqua velit fugiat est aute officia aliqua"
+        "details": "reprehenderit ad nisi consequat quis velit qui minim do ex"
       },
       {
-        "school": "aliqua ut nulla",
-        "degree": "nisi cillum",
-        "field_of_study": "pariatur nostrud ea pariatur velit",
-        "from": "2018-01-14T11:20:28 -02:00",
-        "to": "2018-04-01T01:08:10 -03:00",
+        "school": "in culpa et",
+        "degree": "eiusmod non",
+        "studyField": "mollit ea eu qui labore",
+        "startTime": "2017-09-24T04:19:21 -03:00",
+        "endTime": "2018-07-29T03:47:49 -03:00",
         "current": false,
-        "description": "qui velit dolore ut pariatur sunt in nulla non proident"
+        "details": "quis duis sunt est excepteur minim nostrud duis incididunt consequat"
       }
     ],
-    "experience": [
+    "experiences": [
       {
-        "title": "aliqua eu",
-        "company": "JETSILK",
-        "location": "ad pariatur",
-        "from": "2014-03-17T05:45:41 -02:00",
-        "to": "2018-07-29T03:44:38 -03:00",
+        "title": "culpa officia",
+        "company": "RODEOMAD",
+        "location": "ea velit",
+        "startTime": "2016-01-25T10:12:24 -02:00",
+        "endTime": "2018-03-18T08:40:32 -02:00",
         "current": false,
-        "description": "proident duis est qui ea duis proident Lorem exercitation cupidatat"
+        "details": "incididunt culpa proident ullamco irure laboris irure laborum exercitation qui"
       },
       {
-        "title": "non laboris",
-        "company": "IMPERIUM",
-        "location": "est adipisicing",
-        "from": "2015-05-07T02:23:26 -03:00",
-        "to": "2018-02-21T12:12:55 -02:00",
+        "title": "exercitation officia",
+        "company": "AMRIL",
+        "location": "tempor deserunt",
+        "startTime": "2015-03-09T10:24:39 -02:00",
+        "endTime": "2018-05-14T09:07:41 -03:00",
         "current": false,
-        "description": "incididunt ea ullamco commodo cillum fugiat minim velit excepteur Lorem"
+        "details": "qui et voluptate dolor labore dolore cupidatat aute nisi fugiat"
       }
     ],
-    "languages": ["ex anim", "sunt pariatur"],
-    "examples_of_work": [
+    "languages": ["cillum commodo", "ut ut"],
+    "projects": [
       {
-        "title": "laboris tempor",
+        "title": "fugiat magna",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
-        "title": "nostrud id",
+        "title": "mollit consequat",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
-    "date": "2018-01-21T03:53:00 -02:00"
+    "createdDate": "2018-08-01T12:56:41 -03:00"
   },
   {
-    "_id": "5b7ab1954b5e962ac5edcc7c",
-    "firstname": "Crystal",
-    "lastname": "Ayers",
-    "email": "crystalayers@imperium.com",
-    "password": "password",
+    "_id": "5b7d16aeaa5dd68e945a2ab9",
+    "firstname": "Tracy",
+    "lastname": "Porter",
+    "email": "tracyporter@amril.com",
     "role": "student",
     "batch": "Spring 2018",
-    "bio": "pariatur proident et ipsum officia aute Lorem mollit mollit proident nulla irure et nisi dolor est veniam ut ipsum magna",
+    "bio": "exercitation Lorem cillum non cillum reprehenderit culpa minim cillum fugiat anim dolor esse esse laboris aliquip sint exercitation cupidatat cillum",
     "github": "http://github.com/lorem",
     "linkedin": "http://linkedin.com/in/lorem/",
     "competences": ["frontend", "backend"],
     "skills": ["JavaScript", "CSS", "HTML"],
     "education": [
       {
-        "school": "do do elit",
-        "degree": "non est",
-        "field_of_study": "minim duis amet deserunt amet",
-        "from": "2017-10-28T07:04:44 -03:00",
-        "to": "2018-04-25T05:35:41 -03:00",
+        "school": "excepteur labore sit",
+        "degree": "tempor enim",
+        "studyField": "id quis culpa dolor mollit",
+        "startTime": "2018-08-10T09:17:05 -03:00",
+        "endTime": "2018-01-05T01:02:14 -02:00",
         "current": false,
-        "description": "eiusmod duis fugiat officia tempor minim officia Lorem qui non"
+        "details": "anim anim tempor laborum deserunt proident aliqua esse cupidatat pariatur"
       },
       {
-        "school": "dolore cillum nisi",
-        "degree": "nostrud nostrud",
-        "field_of_study": "fugiat commodo reprehenderit cupidatat incididunt",
-        "from": "2014-09-16T11:34:46 -03:00",
-        "to": "2018-06-12T01:09:36 -03:00",
+        "school": "dolor minim exercitation",
+        "degree": "cillum ea",
+        "studyField": "duis tempor elit et quis",
+        "startTime": "2018-06-23T04:56:08 -03:00",
+        "endTime": "2018-08-09T06:28:50 -03:00",
         "current": false,
-        "description": "proident labore excepteur mollit non sint cupidatat cillum exercitation dolore"
+        "details": "anim ad incididunt consequat anim ut est sit commodo proident"
       }
     ],
-    "experience": [
+    "experiences": [
       {
-        "title": "consequat velit",
-        "company": "OLYMPIX",
-        "location": "dolor officia",
-        "from": "2017-08-14T10:12:39 -03:00",
-        "to": "2018-04-18T01:51:42 -03:00",
+        "title": "ut est",
+        "company": "OVERPLEX",
+        "location": "et exercitation",
+        "startTime": "2016-07-19T08:31:47 -03:00",
+        "endTime": "2018-04-15T01:05:22 -03:00",
         "current": false,
-        "description": "fugiat voluptate reprehenderit pariatur aliquip sunt nisi magna voluptate duis"
+        "details": "excepteur consectetur mollit do Lorem pariatur dolore nulla eiusmod exercitation"
       },
       {
-        "title": "est do",
-        "company": "FURNIGEER",
-        "location": "amet fugiat",
-        "from": "2017-03-08T04:59:14 -02:00",
-        "to": "2018-03-30T06:38:52 -03:00",
+        "title": "aliqua et",
+        "company": "DANCERITY",
+        "location": "eu est",
+        "startTime": "2014-11-05T02:14:25 -02:00",
+        "endTime": "2018-03-31T05:47:39 -03:00",
         "current": false,
-        "description": "elit anim adipisicing dolor mollit cillum dolore esse cillum aliqua"
+        "details": "incididunt laborum cupidatat velit cupidatat tempor enim consequat dolor velit"
       }
     ],
-    "languages": ["reprehenderit id", "fugiat aliqua"],
-    "examples_of_work": [
+    "languages": ["veniam cillum", "dolore nostrud"],
+    "projects": [
       {
-        "title": "nulla irure",
+        "title": "ipsum quis",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
-        "title": "excepteur aute",
+        "title": "excepteur ad",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
-    "date": "2018-07-09T07:19:16 -03:00"
+    "createdDate": "2018-03-28T08:18:17 -03:00"
   },
   {
-    "_id": "5b7ab19537f399405b46d22c",
-    "firstname": "Suarez",
-    "lastname": "Slater",
-    "email": "suarezslater@furnigeer.com",
-    "password": "password",
+    "_id": "5b7d16aea4be37db9b39ddda",
+    "firstname": "Marian",
+    "lastname": "Terry",
+    "email": "marianterry@dancerity.com",
     "role": "student",
     "batch": "Spring 2018",
-    "bio": "dolor culpa proident ullamco occaecat mollit adipisicing culpa eiusmod et dolor magna et proident incididunt ut non cupidatat consequat consequat",
+    "bio": "sint non magna non esse aute aute ipsum sunt irure culpa laborum ipsum qui laboris nisi aute aliqua Lorem labore",
     "github": "http://github.com/lorem",
     "linkedin": "http://linkedin.com/in/lorem/",
     "competences": ["frontend", "backend"],
     "skills": ["JavaScript", "CSS", "HTML"],
     "education": [
       {
-        "school": "cupidatat mollit magna",
-        "degree": "ex in",
-        "field_of_study": "elit veniam officia nostrud fugiat",
-        "from": "2017-01-29T06:25:48 -02:00",
-        "to": "2018-07-02T04:08:49 -03:00",
+        "school": "eu fugiat amet",
+        "degree": "ipsum ex",
+        "studyField": "aute sunt eiusmod do ullamco",
+        "startTime": "2014-08-23T04:11:01 -03:00",
+        "endTime": "2018-02-05T07:01:49 -02:00",
         "current": false,
-        "description": "nulla ex amet qui esse ea nostrud in et elit"
+        "details": "ullamco dolor esse consectetur elit aliqua officia nostrud magna nisi"
       },
       {
-        "school": "veniam adipisicing nostrud",
-        "degree": "velit eu",
-        "field_of_study": "proident do enim pariatur excepteur",
-        "from": "2014-12-09T02:03:11 -02:00",
-        "to": "2018-02-14T10:18:34 -02:00",
+        "school": "sunt ut consequat",
+        "degree": "velit id",
+        "studyField": "non consequat dolore Lorem qui",
+        "startTime": "2016-08-25T10:13:33 -03:00",
+        "endTime": "2018-02-21T01:00:10 -02:00",
         "current": false,
-        "description": "aute cillum sint eiusmod qui veniam nostrud duis magna consequat"
+        "details": "incididunt proident occaecat in quis consequat ut laboris sunt quis"
       }
     ],
-    "experience": [
+    "experiences": [
       {
-        "title": "id irure",
-        "company": "GEEKOLA",
-        "location": "dolor commodo",
-        "from": "2015-11-24T02:13:05 -02:00",
-        "to": "2018-03-18T02:32:58 -02:00",
+        "title": "cupidatat veniam",
+        "company": "GEOLOGIX",
+        "location": "consectetur reprehenderit",
+        "startTime": "2015-08-08T12:01:00 -03:00",
+        "endTime": "2018-04-21T05:36:15 -03:00",
         "current": false,
-        "description": "aute non ullamco do aliquip tempor ullamco ad anim excepteur"
+        "details": "id esse consectetur aliquip aliquip velit ut duis veniam commodo"
       },
       {
-        "title": "irure laborum",
-        "company": "BLUPLANET",
-        "location": "sunt ea",
-        "from": "2014-02-16T10:15:03 -02:00",
-        "to": "2018-01-04T09:38:34 -02:00",
+        "title": "magna pariatur",
+        "company": "REVERSUS",
+        "location": "dolor est",
+        "startTime": "2014-05-08T07:08:34 -03:00",
+        "endTime": "2018-05-20T05:38:11 -03:00",
         "current": false,
-        "description": "ipsum esse occaecat ea nostrud ipsum cillum anim eiusmod voluptate"
+        "details": "exercitation occaecat amet ipsum eiusmod adipisicing quis ullamco commodo deserunt"
       }
     ],
-    "languages": ["laborum commodo", "non non"],
-    "examples_of_work": [
+    "languages": ["quis occaecat", "deserunt deserunt"],
+    "projects": [
       {
-        "title": "irure sit",
+        "title": "dolore irure",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       },
       {
-        "title": "laboris deserunt",
+        "title": "voluptate et",
         "status": true,
-        "github_link": "https://github.com/example"
+        "githubLink": "https://github.com/example"
       }
     ],
-    "date": "2018-08-05T12:53:37 -03:00"
-  },
-  {
-    "_id": "5b7ab195626e43e3786a5c93",
-    "firstname": "Tillman",
-    "lastname": "Ellison",
-    "email": "tillmanellison@bluplanet.com",
-    "password": "password",
-    "role": "student",
-    "batch": "Spring 2018",
-    "bio": "reprehenderit incididunt duis consequat duis nulla consectetur id laboris Lorem est do laborum nulla ut id nostrud anim nostrud exercitation",
-    "github": "http://github.com/lorem",
-    "linkedin": "http://linkedin.com/in/lorem/",
-    "competences": ["frontend", "backend"],
-    "skills": ["JavaScript", "CSS", "HTML"],
-    "education": [
-      {
-        "school": "nulla qui esse",
-        "degree": "duis voluptate",
-        "field_of_study": "incididunt commodo officia do in",
-        "from": "2016-07-03T09:32:15 -03:00",
-        "to": "2018-05-24T01:35:15 -03:00",
-        "current": false,
-        "description": "aliqua excepteur sunt est culpa et dolore laborum proident consequat"
-      },
-      {
-        "school": "et consequat officia",
-        "degree": "irure ut",
-        "field_of_study": "pariatur labore ex incididunt cupidatat",
-        "from": "2017-09-21T05:46:24 -03:00",
-        "to": "2018-08-15T03:29:16 -03:00",
-        "current": false,
-        "description": "ipsum adipisicing consectetur adipisicing officia aliquip quis aliqua aute minim"
-      }
-    ],
-    "experience": [
-      {
-        "title": "ex ullamco",
-        "company": "CIPROMOX",
-        "location": "dolor officia",
-        "from": "2016-08-10T07:02:01 -03:00",
-        "to": "2018-02-07T02:27:23 -02:00",
-        "current": false,
-        "description": "ipsum magna sunt exercitation ut ad ad qui culpa cupidatat"
-      },
-      {
-        "title": "reprehenderit sunt",
-        "company": "OBONES",
-        "location": "adipisicing incididunt",
-        "from": "2015-02-06T06:36:39 -02:00",
-        "to": "2018-06-13T10:58:54 -03:00",
-        "current": false,
-        "description": "velit sit cupidatat incididunt ullamco proident dolore veniam minim duis"
-      }
-    ],
-    "languages": ["culpa voluptate", "incididunt non"],
-    "examples_of_work": [
-      {
-        "title": "occaecat mollit",
-        "status": true,
-        "github_link": "https://github.com/example"
-      },
-      {
-        "title": "magna ut",
-        "status": true,
-        "github_link": "https://github.com/example"
-      }
-    ],
-    "date": "2018-06-16T01:25:16 -03:00"
+    "createdDate": "2018-05-11T06:10:46 -03:00"
   }
 ]

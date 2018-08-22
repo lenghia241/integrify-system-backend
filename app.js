@@ -5,6 +5,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
@@ -15,12 +16,15 @@ const baseRouter = require("./routes/base");
 const keys = require("./config/keys");
 
 const app = express();
-
+app.use(bodyParser.urlencoded({ extended: false, }));
 // cors setup
 app.use(cors());
 
 // mongoDB connection
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true, });
+mongoose.connect(
+	keys.mongoURI,
+	{ useNewUrlParser: true, }
+);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
