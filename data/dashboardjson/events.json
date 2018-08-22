@@ -11,7 +11,7 @@
       "city": "Mulberry",
       "country": "Bainbridge"
     },
-    "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+    "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
     "time": "2018-08-27T03:25:28 -03:00",
     "status": "upcoming"
   },
@@ -27,7 +27,7 @@
       "city": "Roland",
       "country": "Farmington"
     },
-    "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+    "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
     "time": "2018-08-21T11:22:38 -03:00",
     "status": "upcoming"
   },
@@ -43,7 +43,7 @@
       "city": "Dixie",
       "country": "Hartsville/Hartley"
     },
-    "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+    "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
     "time": "2018-10-25T12:23:27 -03:00",
     "status": "upcoming"
   },
@@ -59,7 +59,7 @@
       "city": "Kraemer",
       "country": "Gilgo"
     },
-    "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+    "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
     "time": "2018-12-17T02:18:47 -02:00",
     "status": "upcoming"
   },
@@ -75,7 +75,7 @@
       "city": "Weogufka",
       "country": "Jackpot"
     },
-    "event_url": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+    "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
     "time": "2018-10-01T10:11:18 -03:00",
     "status": "upcoming"
   }
