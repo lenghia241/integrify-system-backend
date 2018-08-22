@@ -1,77 +1,94 @@
 const constants = require("./constants");
+const errorHandles = require('./errorHandles')
 
 module.exports = {
 	checkStatusToday: function (today) {
-		const { attendance_data, } = today;
-		const att_list = attendance_data.map(stud => {
+		const { attendanceData, } = today;
+		const attendanceList = attendanceData.map(student => {
 			return {
-				name: stud.name,
-				presence: stud.times_stamp.time_in === "" ? false : stud.presence,
+				studentId: student.studentId,
+				presence: student.timesStamp.timeIn === "" ? false : student.presence,
 			};
 		});
 
 		return {
 			date: today.date,
-			attendance_data: att_list,
+			attendanceData: attendanceList,
 		}
 	},
 	checkStatusTodayById: function (today, id) {
-		const { attendance_data, } = today;
-		const att_stud = attendance_data.filter(stud => stud.name === id)[0];
-		let presence = (att_stud.times_stamp.time_in === "" || att_stud.times_stamp.time_out !== "") ? false : true;
+		const { attendanceData, date} = today;
+		const studentOrNot = errorHandles.isStudent(attendanceData, id);
 
-		return {
-			date: today.date,
-			...att_stud,
+		if(!studentOrNot) {
+			return {
+				msg: "Student is not found",
+			}
+		}
+		const attendanceStudent = studentOrNot;		
+		const presence = (attendanceStudent.timesStamp.timeIn === "" || attendanceStudent.timesStamp.timeOut !== "") ? false : true;
+
+		return {		
+			date,
+			...attendanceStudent,	
 			presence
 		};
 	},
-	assessTodayStatus: function (student, time_now) {
-		let current_status;
-		if (student.times_stamp.time_in !== "") {
-			student.times_stamp = {
-				...student.times_stamp,
-				time_out: time_now,
-				left_early: time_now < constants.CHECK_OUT_TIME ? true : false,
+	updateStudentTodayStatus: function (today, reqStudent) {
+		const {id, time} = reqStudent;
+		const {attendanceData} = today;
+		const studentOrNot = errorHandles.isStudent(attendanceData, id);
+		if(!studentOrNot) {
+			return {
+				msg: "Student is not found",
+			}
+		}
+
+		let currentStudentStatus;
+		if (studentOrNot.timesStamp.timeIn !== "") {
+			studentOrNot.timesStamp = {
+				...studentOrNot.timesStamp,
+				timeOut: time,
+				leftEarly: time < constants.CHECK_OUT_TIME ? true : false,
 			};
-			current_status = {
-				...student,
+			currentStudentStatus = {
+				...studentOrNot,
 				presence: false
 			}
 		} else {
-			student.times_stamp = {
-				...student.times_stamp,
-				time_in: time_now,
-				late: time_now > constants.CHECK_IN_TIME ? true : false,
+			studentOrNot.timesStamp = {
+				...studentOrNot.timesStamp,
+				timeIn: time,
+				late: time > constants.CHECK_IN_TIME ? true : false,
 			};
-			current_status = {
-				...student,
+			currentStudentStatus = {
+				...studentOrNot,
 				presence: true
 			}
 		}
-		return current_status;
+		return currentStudentStatus;
 	},
 	assessHistoryStatus: function(history) {
 		return history.map(day => {
-			const att_data = day.attendance_data.map(att => {
+			const attendanceList = day.attendanceData.map(student => {
 				let attendance;
-				if(!att.times_stamp.late && !att.times_stamp.left_early){
+				if(!student.timesStamp.late && !student.timesStamp.leftEarly){
 					attendance = constants.FULL;
 				} else {
-					if(att.times_stamp.time_in === "") {
+					if(student.timesStamp.timeIn === "") {
 						attendance = constants.ABSENT;
 					} else {
 						attendance = constants.PARTIAL;
 					}
 				}
 				return {
-					...att,
+					...student,
 					attendance
 				}
 			})
 			return {
 				...day,
-				attendance_data: att_data,
+				attendanceData: attendanceList,
 			}
 		} 
 	)}
