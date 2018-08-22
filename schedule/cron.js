@@ -1,16 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 const schedule = require("node-schedule");
-const moment = require("moment");
 
-const rule = "0 0 0 * * *";
+const rule = "0 0 * * *";
 const attendance = schedule.scheduleJob(rule, function() {
 	const history = JSON.parse(
 		fs.readFileSync(
 			path.join(`${__dirname}/../data/attendancejson/history.json`)
 		)
 	);
-	const date = moment().format("MMM Do YY");
+	const date = new Date().toJSON();
 	const today = {
 		date: date,
 		attendance_data: [

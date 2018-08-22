@@ -2,17 +2,21 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const timeStampSchema = new Schema({
-	checkIn: Date,
-	checkOut: Date,
+	timeIn: Date,
+	timeOut: Date,
+	late: Boolean,
+	leftEarly: Boolean,
 });
 
 const attendanceSchema = new Schema({
-	_id: Schema.Types.ObjectId,
-	date: Date,
+	date: {
+		type: Date,
+		default: Date.now,
+	},
 	attendance_data: [
 		{
-			name: { type: Schema.Types.ObjectId, ref: "User", },
-			timestamps: [timeStampSchema,],
+			studentId: { type: Schema.Types.ObjectId, ref: "User", },
+			timeStamps: timeStampSchema,
 		},
 	],
 });
