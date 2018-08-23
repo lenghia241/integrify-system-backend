@@ -1,15 +1,11 @@
 const validator = require("validator");
 
 module.exports = data => {
-	let { email, password, password2, } = data;
+	let { password, password2, } = data;
 	const errors = {
-		email: !email ? "Email is required" : "",
 		password: !password ? "Password is required" : "",
 		password2: !password2 ? "Password confirmation is required" : "",
 	};
-	if (!errors.email) {
-		errors.email = !validator.isEmail(email) ? "Email is invalid" : "";
-	}
 	const regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/g;
 	if (!errors.password) {
 		errors.password = !regex.test(password)
