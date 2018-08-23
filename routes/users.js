@@ -5,10 +5,11 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const credentials = require("../config/credentials");
 const User = require("../models/user");
+const Attendance = require("../models/attendance");
+const Profile = require("../models/profile");
 const validateTempUser = require("../validation/temp-signup");
 const validateSignup = require("../validation/signup");
 const validateLogin = require("../validation/login");
-
 /* GET test api */
 router.get("/", function(req, res) {
 	res.send("respond with a resource");
@@ -270,6 +271,33 @@ router.put("/password/reset/:id", (
 			});
 		})
 		.catch(() => res.status(400).json({ msg: "Id is in wrong format", }));
+});
+
+router.get("/:id", (req, res) => {
+	const { id, } = req.params;
+	Profile.findOne({ user: id, })
+		.populate("user", ["firstName",])
+		.then(profile => {
+			const { role, batch, user, } = profile;
+			const { firstName, } = user;
+			Attendance.findOne({})
+				.sort({ date: -1, })
+				.then(today => {
+					const studentInfo = today.attendanceData.find(
+						stud => stud.studentId.toString() === id
+					);
+					const { timeIn, } = studentInfo.timesStamp;
+					const userData = {
+						id,
+						firstName,
+						role,
+						batch,
+						present: timeIn ? true : false,
+					};
+					res.json(userData);
+				});
+		})
+		.catch(e => console.log(e));
 });
 
 module.exports = router;

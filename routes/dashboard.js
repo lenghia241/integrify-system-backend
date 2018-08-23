@@ -35,7 +35,7 @@ router.post("/assignments", upload.any(), (req, res) => {
 	assignments.push(newAssignment);
 	fs.writeFile(
 		"./data/dashboardjson/assignments.json",
-		JSON.stringify(assignments),
+		JSON.stringify(assignments,undefined,2),
 		function(err) {
 			if (err) throw err;
 			res.json("added assignment successfully");
@@ -62,7 +62,7 @@ router.delete("/assignments/:id", function(req, res) {
 	);
 	fs.writeFile(
 		"./data/dashboardjson/assignments.json",
-		JSON.stringify(remainingAssignments),
+		JSON.stringify(remainingAssignments,undefined,2),
 		function(err) {
 			if (err) throw err;
 			res.json("deleted successfully");
@@ -84,7 +84,7 @@ router.put("/assignments/:id", (req, res) => {
 	assignments[index] = assignment;
 	fs.writeFile(
 		"./data/dashboardjson/assignments.json",
-		JSON.stringify(assignments),
+		JSON.stringify(assignments,undefined,2),
 		function(err) {
 			if (err) throw err;
 			res.json("update is success");
@@ -111,7 +111,7 @@ router.post("/studysync", upload.any(), (req, res) => {
 	studysync.push(newstudy);
 	fs.writeFile(
 		"./data/dashboardjson/studysync.json",
-		JSON.stringify(studysync),
+		JSON.stringify(studysync,undefined,2),
 		function(err) {
 			if (err) throw err;
 			res.json("added studysync successfully");
@@ -137,7 +137,7 @@ router.delete("/studysync/:id", function(req, res) {
 	);
 	fs.writeFile(
 		"./data/dashboardjson/studysync.json",
-		JSON.stringify(remainingstudysync),
+		JSON.stringify(remainingstudysync,undefined,2),
 		function(err) {
 			if (err) throw err;
 			res.json("Deleted successfully");
@@ -158,7 +158,7 @@ router.put("/studysync/:id", (req, res) => {
 	studysync[index] = study;
 	fs.writeFile(
 		"./data/dashboardjson/studysync.json",
-		JSON.stringify(studysync),
+		JSON.stringify(studysync,undefined,2),
 		function(err) {
 			if (err) throw err;
 			res.json("updated studysync successfully");
