@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const timeStampSchema = new Schema({
+const timesStampSchema = new Schema({
 	timeIn: Date,
 	timeOut: Date,
 	late: Boolean,
@@ -13,10 +13,10 @@ const attendanceSchema = new Schema({
 		type: Date,
 		default: Date.now,
 	},
-	attendance_data: [
+	attendanceData: [
 		{
 			studentId: { type: Schema.Types.ObjectId, ref: "User", },
-			timeStamps: timeStampSchema,
+			timesStamp: timesStampSchema,
 		},
 	],
 });
