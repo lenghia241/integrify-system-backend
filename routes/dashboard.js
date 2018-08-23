@@ -6,6 +6,7 @@ const studysync = require("../data/dashboardjson/studysync.json");
 const multer = require("multer");
 const upload = multer({ dest: "./uploads", });
 const uuid = require("uuid");
+const fs = require("fs");
 
 router.get("/", (req, res) => {
 	res.send("this is dashboard");
@@ -32,16 +33,41 @@ router.post("/assignments", upload.any(), (req, res) => {
 		submitted: req.body.submitted,
 	};
 	assignments.push(newAssignment);
-	res.send(assignments);
+	fs.writeFile(
+		"./data/dashboardjson/assignments.json",
+		JSON.stringify(assignments),
+		function(err) {
+			if (err) throw err;
+			res.json("added assignment successfully");
+		}
+	);
+	// res.send(assignments);
 });
 
 //Deleting one  assignment based on id
 router.delete("/assignments/:id", function(req, res) {
-	const id = req.params.id;
-	// const remaining_assignments = assignments.filter(assignment => {
-	// 	return assignment._id !== id;
-	// });
-	res.json(null);
+	const indexOfCouseInJson = assignments
+		.map(function(assignment) {
+			return assignment._id;
+		})
+		.indexOf(req.params.id); //find the index of :id
+	if (indexOfCouseInJson === -1) {
+		res.statusCode = 404;
+		return res.send("Error 404: No assignment found");
+	}
+	const result = assignments.splice(indexOfCouseInJson, 1);
+
+	const remainingAssignments = assignments.filter(
+		assignment => assignment._id !== result._id
+	);
+	fs.writeFile(
+		"./data/dashboardjson/assignments.json",
+		JSON.stringify(remainingAssignments),
+		function(err) {
+			if (err) throw err;
+			res.json("deleted successfully");
+		}
+	);
 });
 
 //Edit and update of assignment
@@ -56,7 +82,15 @@ router.put("/assignments/:id", (req, res) => {
 		assignment[key] = req.body[key];
 	});
 	assignments[index] = assignment;
-	res.send(assignments);
+	fs.writeFile(
+		"./data/dashboardjson/assignments.json",
+		JSON.stringify(assignments),
+		function(err) {
+			if (err) throw err;
+			res.json("update is success");
+		}
+	);
+	// res.send(assignments);
 });
 
 //List of studysynch
@@ -75,15 +109,40 @@ router.post("/studysync", upload.any(), (req, res) => {
 		description: req.body.description,
 	};
 	studysync.push(newstudy);
-	res.send(studysync);
+	fs.writeFile(
+		"./data/dashboardjson/studysync.json",
+		JSON.stringify(studysync),
+		function(err) {
+			if (err) throw err;
+			res.json("added studysync successfully");
+		}
+	);
+	// res.send(studysync);
 });
 //Deleting one studysync
 router.delete("/studysync/:id", function(req, res) {
-	const id = req.params.id;
-	// const remaining_studysync = studysync.filter(study => {
-	// 	return study._id !== id;
-	// });
-	res.json(null);
+	let indexOfCouseInJson = studysync
+		.map(function(study) {
+			return study._id;
+		})
+		.indexOf(req.params.id); //find the index of :id
+	if (indexOfCouseInJson === -1) {
+		res.statusCode = 404;
+		return res.send("Error 404: No studysync found");
+	}
+	let result = studysync.splice(indexOfCouseInJson, 1);
+
+	const remainingstudysync = studysync.filter(
+		studysync => studysync._id !== result._id
+	);
+	fs.writeFile(
+		"./data/dashboardjson/studysync.json",
+		JSON.stringify(remainingstudysync),
+		function(err) {
+			if (err) throw err;
+			res.json("Deleted successfully");
+		}
+	);
 });
 //Edit and upadte studysync
 router.put("/studysync/:id", (req, res) => {
@@ -97,7 +156,15 @@ router.put("/studysync/:id", (req, res) => {
 		study[key] = req.body[key];
 	});
 	studysync[index] = study;
-	res.send(studysync);
+	fs.writeFile(
+		"./data/dashboardjson/studysync.json",
+		JSON.stringify(studysync),
+		function(err) {
+			if (err) throw err;
+			res.json("updated studysync successfully");
+		}
+	);
+	// res.send(studysync);
 });
 
 module.exports = router;
