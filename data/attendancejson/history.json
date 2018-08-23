@@ -6,36 +6,28 @@
         "studentId": "5b7ab1957c9b3c63007d5c8c",
         "timesStamp": {
           "timeIn": "",
-          "timeOut": "",
-          "late": false,
-          "leftEarly": false
+          "timeOut": ""
         }
       },
       {
         "studentId": "5b7ab1952cc5b5a552cfda72",
         "timesStamp": {
           "timeIn": "",
-          "timeOut": "",
-          "late": false,
-          "leftEarly": false
+          "timeOut": ""
         }
       },
       {
         "studentId": "5b7ab1953129baf45fac3a05",
         "timesStamp": {
           "timeIn": "",
-          "timeOut": "",
-          "late": false,
-          "leftEarly": false
+          "timeOut": ""
         }
       },
       {
         "studentId": "5b7ab195f176fd2767d3a954",
         "timesStamp": {
           "timeIn": "",
-          "timeOut": "",
-          "late": false,
-          "leftEarly": false
+          "timeOut": ""
         }
       }
     ]
@@ -47,36 +39,28 @@
         "studentId": "5b7ab1957c9b3c63007d5c8c",
         "timesStamp": {
           "timeIn": "",
-          "timeOut": "",
-          "late": true,
-          "leftEarly": true
+          "timeOut": ""
         }
       },
       {
         "studentId": "5b7ab1952cc5b5a552cfda72",
         "timesStamp": {
           "timeIn": "",
-          "timeOut": "",
-          "late": true,
-          "leftEarly": true
+          "timeOut": ""
         }
       },
       {
         "studentId": "5b7ab1953129baf45fac3a05",
         "timesStamp": {
           "timeIn": "",
-          "timeOut": "",
-          "late": true,
-          "leftEarly": true
+          "timeOut": ""
         }
       },
       {
         "studentId": "5b7ab195f176fd2767d3a954",
         "timesStamp": {
           "timeIn": "",
-          "timeOut": "",
-          "late": true,
-          "leftEarly": true
+          "timeOut": ""
         }
       }
     ]
@@ -87,37 +71,29 @@
       {
         "studentId": "5b7ab1957c9b3c63007d5c8c",
         "timesStamp": {
-          "timeIn": "",
-          "timeOut": "",
-          "late": true,
-          "leftEarly": true
+          "timeIn": "09:16:25",
+          "timeOut": ""
         }
       },
       {
         "studentId": "5b7ab1952cc5b5a552cfda72",
         "timesStamp": {
           "timeIn": "11:16:25",
-          "timeOut": "17:02:25",
-          "late": true,
-          "leftEarly": false
+          "timeOut": "17:02:25"
         }
       },
       {
         "studentId": "5b7ab1953129baf45fac3a05",
         "timesStamp": {
           "timeIn": "11:16:25",
-          "timeOut": "17:02:25",
-          "late": true,
-          "leftEarly": false
+          "timeOut": "17:02:25"
         }
       },
       {
         "studentId": "5b7ab195f176fd2767d3a954",
         "timesStamp": {
           "timeIn": "11:16:25",
-          "timeOut": "17:02:25",
-          "late": true,
-          "leftEarly": false
+          "timeOut": "17:02:25"
         }
       }
     ]
@@ -129,36 +105,28 @@
         "studentId": "5b7ab1957c9b3c63007d5c8c",
         "timesStamp": {
           "timeIn": "08:46:25",
-          "timeOut": "17:46:25",
-          "late": false,
-          "leftEarly": false
+          "timeOut": "17:46:25"
         }
       },
       {
         "studentId": "5b7ab1952cc5b5a552cfda72",
         "timesStamp": {
           "timeIn": "10:46:25",
-          "timeOut": "14:46:25",
-          "late": true,
-          "leftEarly": true
+          "timeOut": "14:46:25"
         }
       },
       {
         "studentId": "5b7ab1953129baf45fac3a05",
         "timesStamp": {
           "timeIn": "11:16:25",
-          "timeOut": "17:02:25",
-          "late": true,
-          "leftEarly": false
+          "timeOut": "17:02:25"
         }
       },
       {
         "studentId": "5b7ab195f176fd2767d3a954",
         "timesStamp": {
           "timeIn": "11:16:25",
-          "timeOut": "17:02:25",
-          "late": true,
-          "leftEarly": false
+          "timeOut": "17:02:25"
         }
       }
     ]
@@ -170,36 +138,28 @@
         "studentId": "5b7ab1957c9b3c63007d5c8c",
         "timesStamp": {
           "timeIn": "08:46:25",
-          "timeOut": "17:46:25",
-          "late": false,
-          "leftEarly": false
+          "timeOut": "17:46:25"
         }
       },
       {
         "studentId": "5b7ab1952cc5b5a552cfda72",
         "timesStamp": {
           "timeIn": "10:46:25",
-          "timeOut": "14:46:25",
-          "late": true,
-          "leftEarly": true
+          "timeOut": "14:46:25"
         }
       },
       {
         "studentId": "5b7ab1953129baf45fac3a05",
         "timesStamp": {
           "timeIn": "11:16:25",
-          "timeOut": "17:02:25",
-          "late": true,
-          "leftEarly": false
+          "timeOut": "17:02:25"
         }
       },
       {
         "studentId": "5b7ab195f176fd2767d3a954",
         "timesStamp": {
           "timeIn": "08:55:25",
-          "timeOut": "15:10:25",
-          "late": false,
-          "leftEarly": true
+          "timeOut": "15:10:25"
         }
       }
     ]
@@ -211,36 +171,28 @@
         "studentId": "5b7ab1957c9b3c63007d5c8c",
         "timesStamp": {
           "timeIn": "08:46:25",
-          "timeOut": "17:46:25",
-          "late": false,
-          "leftEarly": false
+          "timeOut": "17:46:25"
         }
       },
       {
         "studentId": "5b7ab1952cc5b5a552cfda72",
         "timesStamp": {
           "timeIn": "10:46:25",
-          "timeOut": "14:46:25",
-          "late": true,
-          "leftEarly": true
+          "timeOut": "14:46:25"
         }
       },
       {
         "studentId": "5b7ab1953129baf45fac3a05",
         "timesStamp": {
           "timeIn": "11:16:25",
-          "timeOut": "17:02:25",
-          "late": true,
-          "leftEarly": false
+          "timeOut": "17:02:25"
         }
       },
       {
         "studentId": "5b7ab195f176fd2767d3a954",
         "timesStamp": {
           "timeIn": "11:16:25",
-          "timeOut": "17:02:25",
-          "late": true,
-          "leftEarly": false
+          "timeOut": "17:02:25"
         }
       }
     ]

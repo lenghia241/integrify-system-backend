@@ -15,24 +15,25 @@ const isStudent = (attendanceData, personId) => {
 	return attendanceData.find(student => student.studentId === personId);
 };
 
+//[Testing] - Reset today as default 
 const resetToday = (today) => {
 	const { attendanceData, } = today;
 	attendanceData.forEach(student => {
 		student.timesStamp = {
 			timeIn: "",
 			timeOut: "",
-			late: true,
-			leftEarly: true,
 		}
 	});
 }
 
+//List today's date & all students' current presence 
 const checkStatusToday = (today) => {
 	const { attendanceData, } = today;
 	const attendanceList = attendanceData.map(student => {
+		const {timeIn, timeOut} = student && student.timesStamp;
 		return {
 			studentId: student.studentId,
-			presence: (student.timesStamp.timeIn === "" || student.timesStamp.timeOut !== "") ? false : true,
+			presence: !!(timeIn && !timeOut),
 		};
 	});
 
@@ -52,13 +53,32 @@ const checkStatusTodayById = (today, id) => {
 		}
 	}
 	
-	const presence = (student.timesStamp.timeIn === "" || student.timesStamp.timeOut !== "") ? false : true;
+	const {timeIn, timeOut} = student.timesStamp;
+	const todayStatus = assessTimesStampStatus(student.timesStamp);
+	const presence = !!(timeIn && !timeOut);
 
 	return {		
 		date,
-		...student,	
+		...student,
+		...todayStatus,	
 		presence
 	};
+}
+
+const assessTimesStampStatus = (timesStamp) => {
+	const {timeIn, timeOut} = timesStamp;
+	let todayStatus;
+	if(timeIn && !timeOut) {	
+		todayStatus = {
+			late: timeIn > CHECK_IN_TIME ? true : false,
+		}
+	} else if(timeOut) {
+		todayStatus = {
+			late: timeIn > CHECK_IN_TIME ? true : false,
+			leftEarly: timeOut < CHECK_OUT_TIME ? true : false,
+		}
+	}
+	return todayStatus;
 }
 
 const updateStudentTodayStatus = (today, reqStudent) => {
@@ -76,20 +96,22 @@ const updateStudentTodayStatus = (today, reqStudent) => {
 		student.timesStamp = {
 			...student.timesStamp,
 			timeOut: time,
-			leftEarly: time < CHECK_OUT_TIME ? true : false,
 		};
+		const currentStatus = assessTimesStampStatus(student.timesStamp);
 		currentStudentStatus = {
 			...student,
+			...currentStatus,
 			presence: false
 		}
 	} else {
 		student.timesStamp = {
 			...student.timesStamp,
 			timeIn: time,
-			late: time > CHECK_IN_TIME ? true : false,
 		};
+		const currentStatus = assessTimesStampStatus(student.timesStamp);
 		currentStudentStatus = {
 			...student,
+			...currentStatus,
 			presence: true
 		}
 	}
@@ -100,17 +122,16 @@ const assessHistoryStatus = (history) => {
 	return history.map(day => {
 		const attendanceList = day.attendanceData.map(student => {
 			let attendance;
-			if(!student.timesStamp.late && !student.timesStamp.leftEarly){
-				attendance = FULL;
+			const status = assessTimesStampStatus(student.timesStamp);
+			if(!status){
+				attendance = ABSENT;
 			} else {
-				if(student.timesStamp.timeIn === "") {
-					attendance = ABSENT;
-				} else {
-					attendance = PARTIAL;
-				}
+				const {late, leftEarly} = status;
+				attendance = (!late && !leftEarly && leftEarly !== undefined) ? FULL : PARTIAL;
 			}
 			return {
 				...student,
+				...status,
 				attendance
 			}
 		})

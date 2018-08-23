@@ -19,8 +19,6 @@ const attendance = schedule.scheduleJob(rule, function() {
 				timesStamp: {
 					timeIn: "",
 					timeOut: "",
-					late: false,
-					leftEarly: false,
 				},
 			},
 			{
@@ -28,8 +26,6 @@ const attendance = schedule.scheduleJob(rule, function() {
 				timesStamp: {
 					timeIn: "",
 					timeOut: "",
-					late: false,
-					leftEarly: false,
 				},
 			},
 			{
@@ -37,8 +33,6 @@ const attendance = schedule.scheduleJob(rule, function() {
 				timesStamp: {
 					timeIn: "",
 					timeOut: "",
-					late: false,
-					leftEarly: false,
 				},
 			},
 			{
@@ -46,8 +40,6 @@ const attendance = schedule.scheduleJob(rule, function() {
 				timesStamp: {
 					timeIn: "",
 					timeOut: "",
-					late: false,
-					leftEarly: false,
 				},
 			},
 		],
