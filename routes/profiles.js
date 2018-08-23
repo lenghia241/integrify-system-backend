@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 let profiles = require("../data/profilejson/profiles.json");
-let functions = require("../view_functions/profiles_functions");
+let functions = require("./profiles_functions/profiles_functions");
 
 // show all profiles
 router.get("/", (req, res) => {
@@ -34,7 +34,7 @@ router.get("/:id", (req, res) => {
 // delete 1 profile
 router.delete("/:id", (req, res) => {
 	const id = req.params.id;
-	result = functions.deleteProfile(id, profiles);
+	const result = functions.deleteProfile(id, profiles);
 	res.send(result);
 });
 

@@ -15,6 +15,18 @@ const isStudent = (attendanceData, personId) => {
 	return attendanceData.find(student => student.studentId === personId);
 };
 
+const resetToday = (today) => {
+	const { attendanceData, } = today;
+	attendanceData.forEach(student => {
+		student.timesStamp = {
+			timeIn: "",
+			timeOut: "",
+			late: true,
+			leftEarly: true,
+		}
+	});
+}
+
 const checkStatusToday = (today) => {
 	const { attendanceData, } = today;
 	const attendanceList = attendanceData.map(student => {
@@ -32,19 +44,19 @@ const checkStatusToday = (today) => {
 
 const checkStatusTodayById = (today, id) => {
 	const { attendanceData, date} = today;
-	const studentOrNot = isStudent(attendanceData, id);
+	const student = isStudent(attendanceData, id);
 
-	if(!studentOrNot) {
+	if(!student) {
 		return {
 			msg: "Student is not found",
 		}
 	}
-	const attendanceStudent = studentOrNot;		
-	const presence = (attendanceStudent.timesStamp.timeIn === "" || attendanceStudent.timesStamp.timeOut !== "") ? false : true;
+	
+	const presence = (student.timesStamp.timeIn === "" || student.timesStamp.timeOut !== "") ? false : true;
 
 	return {		
 		date,
-		...attendanceStudent,	
+		...student,	
 		presence
 	};
 }
@@ -52,32 +64,32 @@ const checkStatusTodayById = (today, id) => {
 const updateStudentTodayStatus = (today, reqStudent) => {
 	const {id, time} = reqStudent;
 	const {attendanceData} = today;
-	const studentOrNot = isStudent(attendanceData, id);
-	if(!studentOrNot) {
+	const student = isStudent(attendanceData, id);
+	if(!student) {
 		return {
 			msg: "Student is not found",
 		}
 	}
 
 	let currentStudentStatus;
-	if (studentOrNot.timesStamp.timeIn !== "") {
-		studentOrNot.timesStamp = {
-			...studentOrNot.timesStamp,
+	if (student.timesStamp.timeIn !== "") {
+		student.timesStamp = {
+			...student.timesStamp,
 			timeOut: time,
 			leftEarly: time < CHECK_OUT_TIME ? true : false,
 		};
 		currentStudentStatus = {
-			...studentOrNot,
+			...student,
 			presence: false
 		}
 	} else {
-		studentOrNot.timesStamp = {
-			...studentOrNot.timesStamp,
+		student.timesStamp = {
+			...student.timesStamp,
 			timeIn: time,
 			late: time > CHECK_IN_TIME ? true : false,
 		};
 		currentStudentStatus = {
-			...studentOrNot,
+			...student,
 			presence: true
 		}
 	}
@@ -123,10 +135,15 @@ router.get("/", (req, res) => {
 	res.json(currentListStatus);
 });
 
+router.put("/today/reset", (req, res) => {
+	resetToday(history[0]);
+	res.json(history[0]);
+})
+
 router.get("/today/:studentId", (req, res) => {
 	const { studentId, } = req.params;
-	const attendanceStudent = checkStatusTodayById(history[0], studentId);
-	res.send(attendanceStudent);
+	const student = checkStatusTodayById(history[0], studentId);
+	res.send(student);
 });
 
 router.get("/history", (req, res) => {
@@ -137,7 +154,7 @@ router.get("/history", (req, res) => {
 router.put("/today/:studentId", (req, res) => {
 	const reqStudent = {
 		id: req.params.studentId, //ObjectId of student
-		time: moment().format("HH:mm:ss"), //default
+		time: moment().utcOffset("+03:00").format("HH:mm:ss"), //default
 	};
 
 	// Check attendance

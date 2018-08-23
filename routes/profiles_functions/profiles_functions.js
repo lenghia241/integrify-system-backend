@@ -6,7 +6,7 @@ const deleteProfile = (id, profiles) => {
 const editProfile = (id, new_data, profiles) => {
 	profiles = profiles.map((profile) => {
 		if (profile._id === id) {
-			profile = { ...profile, ...new_data };
+			profile = { ...profile, ...new_data, };
 		}
 		return profile;
 	});

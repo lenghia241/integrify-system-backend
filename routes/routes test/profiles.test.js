@@ -1,21 +1,19 @@
 /* eslint-disable */
 
-const functions = require("../view_functions/profiles_functions");
-let profiles = require("../data/profilejson/profiles.json");
+const { deleteProfile, editProfile } = require("../profiles_functions/profiles_functions");
+let profiles = require("../../data/profilejson/profiles.json");
 
-describe("delete profile function tests", () => {
+describe("deleteProfile", () => {
 	it("remove from profiles array: 1 profile by its id", () => {
-		const deleteProfile = functions.deleteProfile;
 		const profileToDelete = profiles[0];
 		const result = deleteProfile(profileToDelete._id, profiles);
-		expect(result).toEqual(expect.not.arrayContaining([profileToDelete]));
+		expect(result).not.toContainEqual(profileToDelete);
 	});
 });
 
-describe("edit profile function tests", () => {
+describe("editProfile", () => {
 	it("edit 1 profile", () => {
-		const original = { ...profiles[0] };
-		const editProfile = functions.editProfile;
+		const original = profiles[0];
 		const result = editProfile(
 			original._id,
 			{
