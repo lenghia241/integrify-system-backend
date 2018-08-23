@@ -1,41 +1,41 @@
 [
   {
     "date": "2018-08-23",
-    "attendance_data": [
+    "attendanceData": [
       {
-        "name": "5b7ab1957c9b3c63007d5c8c",
+        "studentId": "5b7ab1957c9b3c63007d5c8c",
         "timesStamp": {
-          "time_in": "",
-          "time_out": "",
+          "timeIn": "",
+          "timeOut": "",
           "late": false,
-          "left_early": false
+          "leftEarly": false
         }
       },
       {
-        "name": "5b7ab1952cc5b5a552cfda72",
+        "studentId": "5b7ab1952cc5b5a552cfda72",
         "timesStamp": {
-          "time_in": "",
-          "time_out": "",
+          "timeIn": "",
+          "timeOut": "",
           "late": false,
-          "left_early": false
+          "leftEarly": false
         }
       },
       {
-        "name": "5b7ab1953129baf45fac3a05",
+        "studentId": "5b7ab1953129baf45fac3a05",
         "timesStamp": {
-          "time_in": "",
-          "time_out": "",
+          "timeIn": "",
+          "timeOut": "",
           "late": false,
-          "left_early": false
+          "leftEarly": false
         }
       },
       {
-        "name": "5b7ab195f176fd2767d3a954",
+        "studentId": "5b7ab195f176fd2767d3a954",
         "timesStamp": {
-          "time_in": "",
-          "time_out": "",
+          "timeIn": "",
+          "timeOut": "",
           "late": false,
-          "left_early": false
+          "leftEarly": false
         }
       }
     ]
