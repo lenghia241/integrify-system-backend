@@ -143,6 +143,28 @@ const assessHistoryStatus = (history) => {
 	} 
 )}
 
+const getHistoryWeek = (monObj, friObj) => {
+	const mon = moment(monObj).format('YYYY-MM-DD');
+	const fri  = moment(friObj).format('YYYY-MM-DD');
+
+	const historyTempt = history.slice(1);
+	const monIndex = historyTempt.findIndex(classDay => classDay.date === mon);
+	const friIndex = historyTempt.findIndex(classDay => classDay.date === fri);
+
+	let thisWeek;
+	console.log(friIndex, monIndex);
+	if(friIndex !== -1 && monIndex !== -1) {
+		thisWeek = [...historyTempt].splice(friIndex, monIndex + 1);
+	} else if(friIndex === -1 && monIndex !== -1) {
+		thisWeek = [...historyTempt].splice(0, monIndex + 1);
+	} else if(friIndex !== -1 && monIndex === -1) {
+		thisWeek = [...historyTempt].splice(friIndex, historyTempt.length);
+	} else {
+		thisWeek = [];
+	}
+	return thisWeek;
+}
+
 //ROUTING 
 router.get("/test/today", (req, res) => {
 	res.send(history[0]);
@@ -168,11 +190,6 @@ router.get("/today/:studentId", (req, res) => {
 	res.send(student);
 });
 
-router.get("/history", (req, res) => {
-	const history_data = assessHistoryStatus(history.slice(1));
-	res.send(history_data);
-});
-
 router.put("/today/:studentId", (req, res) => {
 	const reqStudent = {
 		id: req.params.studentId, //ObjectId of student
@@ -184,5 +201,35 @@ router.put("/today/:studentId", (req, res) => {
 
 	res.send(currentStudentStatus);
 });
+
+router.get("/history/all", (req, res) => {
+	const history_data = assessHistoryStatus(history.slice(1));
+	res.send(history_data);
+});
+
+router.get('/history/this-week', (req, res) => {
+	const day = new Date();
+	// set to Monday of this week
+	const thisMonObj = day.setDate(day.getDate() - (day.getDay() + 6) % 7);	
+	const thisFriObj = day.setDate(day.getDate() + 4);
+
+	let thisWeek = getHistoryWeek(thisMonObj, thisFriObj);	
+	thisWeek = assessHistoryStatus(thisWeek);
+	res.send(thisWeek);
+})
+
+router.get('/history/last-week', (req, res) => {
+	const day = new Date();
+
+	// set to Monday of this week
+	const thisMonObj = day.setDate(day.getDate() - (day.getDay() + 6) % 7);	
+	// set to previous Monday
+	const lastMonObj = day.setDate(day.getDate() - 7);
+	const lastFriObj = day.setDate(day.getDate() + 4);
+
+	let lastWeek = getHistoryWeek(lastMonObj, lastFriObj);
+	lastWeek = assessHistoryStatus(lastWeek);
+	res.send(lastWeek);
+})
 
 module.exports = router;

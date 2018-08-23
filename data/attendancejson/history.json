@@ -66,7 +66,7 @@
     ]
   },
   {
-    "date": "2018-08-19",
+    "date": "2018-08-17",
     "attendanceData": [
       {
         "studentId": "5b7ab1957c9b3c63007d5c8c",
@@ -80,6 +80,39 @@
         "timeStamp": {
           "timeIn": "11:16:25",
           "timeOut": "17:02:25"
+        }
+      },
+      {
+        "studentId": "5b7ab1953129baf45fac3a05",
+        "timeStamp": {
+          "timeIn": "11:16:25",
+          "timeOut": "17:02:25"
+        }
+      },
+      {
+        "studentId": "5b7ab195f176fd2767d3a954",
+        "timeStamp": {
+          "timeIn": "11:16:25",
+          "timeOut": "17:02:25"
+        }
+      }
+    ]
+  },
+  {
+    "date": "2018-08-16",
+    "attendanceData": [
+      {
+        "studentId": "5b7ab1957c9b3c63007d5c8c",
+        "timeStamp": {
+          "timeIn": "08:46:25",
+          "timeOut": "17:46:25"
+        }
+      },
+      {
+        "studentId": "5b7ab1952cc5b5a552cfda72",
+        "timeStamp": {
+          "timeIn": "10:46:25",
+          "timeOut": "14:46:25"
         }
       },
       {
@@ -125,39 +158,6 @@
       {
         "studentId": "5b7ab195f176fd2767d3a954",
         "timeStamp": {
-          "timeIn": "11:16:25",
-          "timeOut": "17:02:25"
-        }
-      }
-    ]
-  },
-  {
-    "date": "2018-08-14",
-    "attendanceData": [
-      {
-        "studentId": "5b7ab1957c9b3c63007d5c8c",
-        "timeStamp": {
-          "timeIn": "08:46:25",
-          "timeOut": "17:46:25"
-        }
-      },
-      {
-        "studentId": "5b7ab1952cc5b5a552cfda72",
-        "timeStamp": {
-          "timeIn": "10:46:25",
-          "timeOut": "14:46:25"
-        }
-      },
-      {
-        "studentId": "5b7ab1953129baf45fac3a05",
-        "timeStamp": {
-          "timeIn": "11:16:25",
-          "timeOut": "17:02:25"
-        }
-      },
-      {
-        "studentId": "5b7ab195f176fd2767d3a954",
-        "timeStamp": {
           "timeIn": "08:55:25",
           "timeOut": "15:10:25"
         }
@@ -165,7 +165,7 @@
     ]
   },
   {
-    "date": "2018-08-13",
+    "date": "2018-08-14",
     "attendanceData": [
       {
         "studentId": "5b7ab1957c9b3c63007d5c8c",
