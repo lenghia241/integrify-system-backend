@@ -15,6 +15,18 @@ const isStudent = (attendanceData, personId) => {
 	return attendanceData.find(student => student.studentId === personId);
 };
 
+const resetToday = (today) => {
+	const { attendanceData, } = today;
+	attendanceData.forEach(student => {
+		student.timesStamp = {
+			timeIn: "",
+			timeOut: "",
+			late: true,
+			leftEarly: true,
+		}
+	});
+}
+
 const checkStatusToday = (today) => {
 	const { attendanceData, } = today;
 	const attendanceList = attendanceData.map(student => {
@@ -122,6 +134,11 @@ router.get("/", (req, res) => {
 	const currentListStatus = checkStatusToday(history[0]);
 	res.json(currentListStatus);
 });
+
+router.put("/today/reset", (req, res) => {
+	resetToday(history[0]);
+	res.json(history[0]);
+})
 
 router.get("/today/:studentId", (req, res) => {
 	const { studentId, } = req.params;
