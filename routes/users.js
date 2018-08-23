@@ -10,7 +10,6 @@ const Profile = require("../models/profile");
 const validateTempUser = require("../validation/temp-signup");
 const validateSignup = require("../validation/signup");
 const validateLogin = require("../validation/login");
-const mongoose = require("mongoose");
 /* GET test api */
 router.get("/", function(req, res) {
 	res.send("respond with a resource");
