@@ -1,5 +1,46 @@
 [
   {
+    "date": "2018-08-23T06:33:45.008Z",
+    "attendance_data": [
+      {
+        "name": "5b7ab1957c9b3c63007d5c8c",
+        "timesStamp": {
+          "time_in": "",
+          "time_out": "",
+          "late": false,
+          "left_early": false
+        }
+      },
+      {
+        "name": "5b7ab1952cc5b5a552cfda72",
+        "timesStamp": {
+          "time_in": "",
+          "time_out": "",
+          "late": false,
+          "left_early": false
+        }
+      },
+      {
+        "name": "5b7ab1953129baf45fac3a05",
+        "timesStamp": {
+          "time_in": "",
+          "time_out": "",
+          "late": false,
+          "left_early": false
+        }
+      },
+      {
+        "name": "5b7ab195f176fd2767d3a954",
+        "timesStamp": {
+          "time_in": "",
+          "time_out": "",
+          "late": false,
+          "left_early": false
+        }
+      }
+    ]
+  },
+  {
     "_id": "5b7876271dd189054044765c",
     "date": "2018-08-20T21:00:00.000Z",
     "attendanceData": [
@@ -10,7 +51,7 @@
           "timeOut": "",
           "late": true,
           "leftEarly": true
-        }      
+        }
       },
       {
         "studentId": "5b7ab1952cc5b5a552cfda72",
@@ -19,7 +60,7 @@
           "timeOut": "",
           "late": true,
           "leftEarly": true
-        }  
+        }
       },
       {
         "studentId": "5b7ab1953129baf45fac3a05",
@@ -28,7 +69,7 @@
           "timeOut": "",
           "late": true,
           "leftEarly": true
-        }  
+        }
       },
       {
         "studentId": "5b7ab195f176fd2767d3a954",
@@ -37,9 +78,9 @@
           "timeOut": "",
           "late": true,
           "leftEarly": true
-        }  
+        }
       }
-      ]
+    ]
   },
   {
     "_id": "5b7876271dd189054044765c",
@@ -52,7 +93,7 @@
           "timeOut": "",
           "late": true,
           "leftEarly": true
-        }      
+        }
       },
       {
         "studentId": "5b7ab1952cc5b5a552cfda72",
@@ -81,131 +122,132 @@
           "leftEarly": false
         }
       }
-      ]},
-    {
-      "_id": "5b7aa4546cc5c58dc715cc45",
-      "date": "2018-08-15T21:00:00.000Z",
-      "attendanceData": [
-        {
-          "studentId": "5b7ab1957c9b3c63007d5c8c",
-          "timesStamp": {
-            "timeIn": "08:46:25",
-            "timeOut": "17:46:25",
-            "late": false,
-            "leftEarly": false
-          }
-        },
-        {
-          "studentId": "5b7ab1952cc5b5a552cfda72",
-          "timesStamp": {
-            "timeIn": "10:46:25",
-            "timeOut": "14:46:25",
-            "late": true,
-            "leftEarly": true
-          }
-        },
-        {
-          "studentId": "5b7ab1953129baf45fac3a05",
-          "timesStamp": {
-            "timeIn": "11:16:25",
-            "timeOut": "17:02:25",
-            "late": true,
-            "leftEarly": false
-          }
-        },
-        {
-          "studentId": "5b7ab195f176fd2767d3a954",
-          "timesStamp": {
-            "timeIn": "11:16:25",
-            "timeOut": "17:02:25",
-            "late": true,
-            "leftEarly": false
-          }
+    ]
+  },
+  {
+    "_id": "5b7aa4546cc5c58dc715cc45",
+    "date": "2018-08-15T21:00:00.000Z",
+    "attendanceData": [
+      {
+        "studentId": "5b7ab1957c9b3c63007d5c8c",
+        "timesStamp": {
+          "timeIn": "08:46:25",
+          "timeOut": "17:46:25",
+          "late": false,
+          "leftEarly": false
         }
-      ]
-    },
-    {
-      "_id": "5b7aa45458921ef3f027da3c",
-      "date": "2018-08-14T21:00:00.000Z",
-      "attendanceData": [
-        {
-          "studentId": "5b7ab1957c9b3c63007d5c8c",
-          "timesStamp": {
-            "timeIn": "08:46:25",
-            "timeOut": "17:46:25",
-            "late": false,
-            "leftEarly": false
-          }          
-        },
-        {
-          "studentId": "5b7ab1952cc5b5a552cfda72",
-          "timesStamp": {
-            "timeIn": "10:46:25",
-            "timeOut": "14:46:25",
-            "late": true,
-            "leftEarly": true
-          }
-        },
-        {
-          "studentId": "5b7ab1953129baf45fac3a05",
-          "timesStamp": {
-            "timeIn": "11:16:25",
-            "timeOut": "17:02:25",
-            "late": true,
-            "leftEarly": false
-          }
-        },
-        {
-          "studentId": "5b7ab195f176fd2767d3a954",
-          "timesStamp": {
-            "timeIn": "08:55:25",
-            "timeOut": "15:10:25",
-            "late": false,
-            "leftEarly": true
-          }
+      },
+      {
+        "studentId": "5b7ab1952cc5b5a552cfda72",
+        "timesStamp": {
+          "timeIn": "10:46:25",
+          "timeOut": "14:46:25",
+          "late": true,
+          "leftEarly": true
         }
-      ]
-    },
-    {
-      "_id": "5b7aa454a972c05b68c078aa",
-      "date": "2018-08-13T21:00:00.000Z",
-      "attendanceData": [
-        {
-          "studentId": "5b7ab1957c9b3c63007d5c8c",
-          "timesStamp": {
-            "timeIn": "08:46:25",
-            "timeOut": "17:46:25",
-            "late": false,
-            "leftEarly": false
-          }   
-        },
-        {
-          "studentId": "5b7ab1952cc5b5a552cfda72",
-          "timesStamp": {
-            "timeIn": "10:46:25",
-            "timeOut": "14:46:25",
-            "late": true,
-            "leftEarly": true
-          }
-        },
-        {
-          "studentId": "5b7ab1953129baf45fac3a05",
-          "timesStamp": {
-            "timeIn": "11:16:25",
-            "timeOut": "17:02:25",
-            "late": true,
-            "leftEarly": false
-          }
-        },
-        {
-          "studentId": "5b7ab195f176fd2767d3a954",
-          "timesStamp": {
-            "timeIn": "11:16:25",
-            "timeOut": "17:02:25",
-            "late": true,
-            "leftEarly": false
-          }
+      },
+      {
+        "studentId": "5b7ab1953129baf45fac3a05",
+        "timesStamp": {
+          "timeIn": "11:16:25",
+          "timeOut": "17:02:25",
+          "late": true,
+          "leftEarly": false
         }
-      ]
-    }
+      },
+      {
+        "studentId": "5b7ab195f176fd2767d3a954",
+        "timesStamp": {
+          "timeIn": "11:16:25",
+          "timeOut": "17:02:25",
+          "late": true,
+          "leftEarly": false
+        }
+      }
+    ]
+  },
+  {
+    "_id": "5b7aa45458921ef3f027da3c",
+    "date": "2018-08-14T21:00:00.000Z",
+    "attendanceData": [
+      {
+        "studentId": "5b7ab1957c9b3c63007d5c8c",
+        "timesStamp": {
+          "timeIn": "08:46:25",
+          "timeOut": "17:46:25",
+          "late": false,
+          "leftEarly": false
+        }
+      },
+      {
+        "studentId": "5b7ab1952cc5b5a552cfda72",
+        "timesStamp": {
+          "timeIn": "10:46:25",
+          "timeOut": "14:46:25",
+          "late": true,
+          "leftEarly": true
+        }
+      },
+      {
+        "studentId": "5b7ab1953129baf45fac3a05",
+        "timesStamp": {
+          "timeIn": "11:16:25",
+          "timeOut": "17:02:25",
+          "late": true,
+          "leftEarly": false
+        }
+      },
+      {
+        "studentId": "5b7ab195f176fd2767d3a954",
+        "timesStamp": {
+          "timeIn": "08:55:25",
+          "timeOut": "15:10:25",
+          "late": false,
+          "leftEarly": true
+        }
+      }
+    ]
+  },
+  {
+    "_id": "5b7aa454a972c05b68c078aa",
+    "date": "2018-08-13T21:00:00.000Z",
+    "attendanceData": [
+      {
+        "studentId": "5b7ab1957c9b3c63007d5c8c",
+        "timesStamp": {
+          "timeIn": "08:46:25",
+          "timeOut": "17:46:25",
+          "late": false,
+          "leftEarly": false
+        }
+      },
+      {
+        "studentId": "5b7ab1952cc5b5a552cfda72",
+        "timesStamp": {
+          "timeIn": "10:46:25",
+          "timeOut": "14:46:25",
+          "late": true,
+          "leftEarly": true
+        }
+      },
+      {
+        "studentId": "5b7ab1953129baf45fac3a05",
+        "timesStamp": {
+          "timeIn": "11:16:25",
+          "timeOut": "17:02:25",
+          "late": true,
+          "leftEarly": false
+        }
+      },
+      {
+        "studentId": "5b7ab195f176fd2767d3a954",
+        "timesStamp": {
+          "timeIn": "11:16:25",
+          "timeOut": "17:02:25",
+          "late": true,
+          "leftEarly": false
+        }
+      }
+    ]
+  }
 ]

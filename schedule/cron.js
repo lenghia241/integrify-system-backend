@@ -53,8 +53,9 @@ const attendance = schedule.scheduleJob(rule, function() {
 	};
 
 	history.unshift(today);
+	console.log("Day is changing, appending today to history.");
 	fs.writeFileSync(
-		path.join(`${__dirname}/../data/attendancejson/history.json`), JSON.stringify(history, undefined, 2)
+		path.join(`${__dirname}/../data/attendancejson/history.json`), JSON.stringify(history)
 	);
 
 });
