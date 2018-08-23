@@ -1,15 +1,16 @@
 const fs = require("fs");
 const path = require("path");
 const schedule = require("node-schedule");
+const moment = require("moment");
 
-const rule = "0 0 * * *";
+const rule = "0 0 0 * * *";
 const attendance = schedule.scheduleJob(rule, function() {
 	const history = JSON.parse(
 		fs.readFileSync(
 			path.join(`${__dirname}/../data/attendancejson/history.json`)
 		)
 	);
-	const date = new Date().toJSON();
+	const date = moment().format("YYYY-MM-DD");
 	const today = {
 		date: date,
 		attendance_data: [
@@ -53,6 +54,7 @@ const attendance = schedule.scheduleJob(rule, function() {
 	};
 
 	history.unshift(today);
+	console.log("Day is changing, appending today to history.");
 	fs.writeFileSync(
 		path.join(`${__dirname}/../data/attendancejson/history.json`), JSON.stringify(history, undefined, 2)
 	);
