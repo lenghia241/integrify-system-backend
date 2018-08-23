@@ -292,7 +292,7 @@ router.get("/:id", (req, res) => {
 						firstName,
 						role,
 						batch,
-						timeIn,
+						present: timeIn ? true : false,
 					};
 					res.json(userData);
 				});
