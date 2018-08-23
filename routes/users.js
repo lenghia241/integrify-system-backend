@@ -286,7 +286,7 @@ router.get("/:id", (req, res) => {
 					const studentInfo = today.attendanceData.find(
 						stud => stud.studentId.toString() === id
 					);
-					const { timeIn, } = studentInfo.timesStamp;
+					const { timeIn, } = studentInfo.timeStamp;
 					const userData = {
 						id,
 						firstName,

@@ -1,20 +1,20 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const timesStampSchema = new Schema({
+const timeStampSchema = new Schema({
 	timeIn: Date,
 	timeOut: Date,
 });
 
 const attendanceSchema = new Schema({
 	date: {
-		type: new Date("<YYYY-mm-dd>"),
-		default: Date.now,
+		type: Date,
+		default: Date.now, //new Date("<YYYY-mm-dd>")
 	},
 	attendanceData: [
 		{
 			studentId: { type: Schema.Types.ObjectId, ref: "User", },
-			timesStamp: timesStampSchema,
+			timeStamp: timeStampSchema,
 		},
 	],
 });

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const moment = require("moment");
+
 //mockup json file
 const history = require("../data/attendancejson/history.json");
 //constants
@@ -19,7 +20,7 @@ const isStudent = (attendanceData, personId) => {
 const resetToday = (today) => {
 	const { attendanceData, } = today;
 	attendanceData.forEach(student => {
-		student.timesStamp = {
+		student.timeStamp = {
 			timeIn: "",
 			timeOut: "",
 		}
@@ -30,7 +31,7 @@ const resetToday = (today) => {
 const checkStatusToday = (today) => {
 	const { attendanceData, } = today;
 	const attendanceList = attendanceData.map(student => {
-		const {timeIn, timeOut} = student && student.timesStamp;
+		const {timeIn, timeOut} = student && student.timeStamp;
 		return {
 			studentId: student.studentId,
 			presence: !!(timeIn && !timeOut),
@@ -53,8 +54,8 @@ const checkStatusTodayById = (today, id) => {
 		}
 	}
 	
-	const {timeIn, timeOut} = student.timesStamp;
-	const todayStatus = assessTimesStampStatus(student.timesStamp);
+	const {timeIn, timeOut} = student.timeStamp;
+	const todayStatus = assesstimeStampStatus(student.timeStamp);
 	const presence = !!(timeIn && !timeOut);
 
 	return {		
@@ -65,8 +66,8 @@ const checkStatusTodayById = (today, id) => {
 	};
 }
 
-const assessTimesStampStatus = (timesStamp) => {
-	const {timeIn, timeOut} = timesStamp;
+const assesstimeStampStatus = (timeStamp) => {
+	const {timeIn, timeOut} = timeStamp;
 	let todayStatus;
 	if(timeIn && !timeOut) {	
 		todayStatus = {
@@ -92,23 +93,23 @@ const updateStudentTodayStatus = (today, reqStudent) => {
 	}
 
 	let currentStudentStatus;
-	if (student.timesStamp.timeIn !== "") {
-		student.timesStamp = {
-			...student.timesStamp,
+	if (student.timeStamp.timeIn !== "") {
+		student.timeStamp = {
+			...student.timeStamp,
 			timeOut: time,
 		};
-		const currentStatus = assessTimesStampStatus(student.timesStamp);
+		const currentStatus = assesstimeStampStatus(student.timeStamp);
 		currentStudentStatus = {
 			...student,
 			...currentStatus,
 			presence: false
 		}
 	} else {
-		student.timesStamp = {
-			...student.timesStamp,
+		student.timeStamp = {
+			...student.timeStamp,
 			timeIn: time,
 		};
-		const currentStatus = assessTimesStampStatus(student.timesStamp);
+		const currentStatus = assesstimeStampStatus(student.timeStamp);
 		currentStudentStatus = {
 			...student,
 			...currentStatus,
@@ -122,7 +123,7 @@ const assessHistoryStatus = (history) => {
 	return history.map(day => {
 		const attendanceList = day.attendanceData.map(student => {
 			let attendance;
-			const status = assessTimesStampStatus(student.timesStamp);
+			const status = assesstimeStampStatus(student.timeStamp);
 			if(!status){
 				attendance = ABSENT;
 			} else {
