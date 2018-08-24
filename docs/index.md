@@ -113,9 +113,9 @@ In this API you have access to array of users with following keys
 
   - GET [https://integrify.network/api/profiles/:id](https://integrify.network/api/profiles/5b7ab1957c9b3c63007d5c8c)
 
-- Get form to edit 1 profile
+- Create new profile
 
-  - GET [https://integrify.network/api/profiles/:id/edit](https://integrify.network/api/profiles/5b7ab1957c9b3c63007d5c8c/edit)
+  - POST [https://integrify.network/api/profiles/](https://integrify.network/api/profiles/)
 
 - Edit 1 profile by id
 

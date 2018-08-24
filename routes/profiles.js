@@ -9,19 +9,18 @@ router.get("/", (req, res) => {
 	res.send(profiles);
 });
 
-// show form to edit 1 profile
-router.get("/:id/edit", (req, res) => {
-	const id = req.params.id;
-	const targetedProfile = profiles.find((profile) => profile._id === id);
-	res.send(`Edit Profile Form for user ${targetedProfile.firstName} ${targetedProfile.lastName}`);
-});
-
 // edit 1 profile
 router.put("/:id", (req, res) => {
 	const id = req.params.id;
 	const newData = req.body;
 	const result = functions.editProfile(id, newData, profiles);
 	res.send(result);
+});
+
+// create new profile
+router.post("/", (req, res) => {
+	profiles.unshift(req.body);
+	res.send(profiles);
 });
 
 // show profile of 1 user

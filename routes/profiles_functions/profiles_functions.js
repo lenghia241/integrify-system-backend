@@ -3,14 +3,10 @@ const deleteProfile = (id, profiles) => {
 	return profiles;
 };
 
-const editProfile = (id, new_data, profiles) => {
-	profiles = profiles.map((profile) => {
-		if (profile._id === id) {
-			profile = { ...profile, ...new_data, };
-		}
-		return profile;
-	});
-	const editedProfile = profiles.find((profile) => profile._id === id);
+const editProfile = (id, newData, profiles) => {
+	const profileIndex = profiles.findIndex((profile) => profile._id === id);
+	let editedProfile = profiles[profileIndex];
+	editedProfile = { ...editedProfile, ...newData, };
 	return editedProfile;
 };
 
