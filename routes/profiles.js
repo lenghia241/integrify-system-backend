@@ -17,10 +17,10 @@ router.put("/:id", (req, res) => {
 	res.send(result);
 });
 
-// create new profile
+// create new profile. temporary for JSON version
 router.post("/", (req, res) => {
 	profiles.unshift(req.body);
-	res.send(profiles);
+	res.send("New profile added!");
 });
 
 // show profile of 1 user
