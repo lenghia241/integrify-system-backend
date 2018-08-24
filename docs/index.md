@@ -44,7 +44,6 @@ Morgan is used for logging request details.On any requests being made,it generat
 
 ##### mongoose
 
-
 Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
 ```
@@ -52,10 +51,12 @@ npm install mongoose
 ```
 
 ### Basic Routes for API
+
 This is API version1. In this we serve mockdata in json file...
+
 ###### List of users profiles
 
-* GET [https://integrify.network/api/profiles](https://integrify.network/api/profiles)
+- GET [https://integrify.network/api/profiles](https://integrify.network/api/profiles)
 
 In this API you have access to array of users with following keys
 
@@ -103,19 +104,33 @@ In this API you have access to array of users with following keys
         }
     ],
     date:""
-    
+
      }
 
-###### Single user profile 
+###### Single user profile
 
-* GET [https://integrify.network/api/profiles/:id](https://integrify.network/api/profiles/5b7ab1957c9b3c63007d5c8c)
+- Get single user's profile by id
+
+  - GET [https://integrify.network/api/profiles/:id](https://integrify.network/api/profiles/5b7ab1957c9b3c63007d5c8c)
+
+- Create new profile
+
+  - POST [https://integrify.network/api/profiles/](https://integrify.network/api/profiles/)
+
+- Edit 1 profile by id
+
+  - PUT [https://integrify.network/api/profiles/:id](https://integrify.network/api/profiles/5b7ab1957c9b3c63007d5c8c)
+
+- Delete 1 profile by id
+  - DELETE [https://integrify.network/api/profiles/:id](https://integrify.network/api/profiles/5b7ab1957c9b3c63007d5c8c)
 
 ###### Dashboard
 
 List of events
-* GET [https://integrify.network/api/dashboard/events](https://integrify.network/api/dashboard/events)
 
-In this API you can access to 
+- GET [https://integrify.network/api/dashboard/events](https://integrify.network/api/dashboard/events)
+
+In this API you can access to
 
     {
 
@@ -133,13 +148,14 @@ In this API you can access to
     "eventUrl": "",
     "time": "",
     "status": ""
-    
+
     }
 
-Here id and  title indicated for particular event's.
+Here id and title indicated for particular event's.
 
 List of Studysync
-* GET [https://integrify.network/api/dashboard/studysync](https://integrify.network/api/dashboard/studysync)
+
+- GET [https://integrify.network/api/dashboard/studysync](https://integrify.network/api/dashboard/studysync)
 
 In this you can have access to following keys
 
@@ -156,9 +172,9 @@ In this you can have access to following keys
 
 firstname and lastname indicates user details who did studysync
 
-
 List of Assignments
-* GET [https://integrify.network/api/dashboard/assignments](https://integrify.network/api/dashboard/assignments)
+
+- GET [https://integrify.network/api/dashboard/assignments](https://integrify.network/api/dashboard/assignments)
 
 In this API you can have access to following keys
 
@@ -175,4 +191,3 @@ In this API you can have access to following keys
     }
 
 Here id if for particular assignment.
-

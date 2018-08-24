@@ -5,78 +5,77 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const credentials = require("../config/credentials");
 const User = require("../models/user");
+const Attendance = require("../models/attendance");
 const Profile = require("../models/profile");
 const validateTempUser = require("../validation/temp-signup");
 const validateSignup = require("../validation/signup");
 const validateLogin = require("../validation/login");
-
-/* GET users listing. */
+/* GET test api */
 router.get("/", function(req, res) {
 	res.send("respond with a resource");
 });
 
 //POST register for tempUser
-router.post("/temp-signup", (req, res) => {
+router.post("/signup/temp", (req, res) => {
 	const { errors, isValid, } = validateTempUser(req.body);
+	const { firstName, lastName, email, } = req.body;
 	if (!isValid) {
 		return res.status(400).json(errors);
 	}
-	const { firstname, lastname, email, } = req.body;
 	User.findOne({ email, }).then(user => {
 		if (user) {
-			errors.msg = "You have already registered";
-			return res.status(409).json(errors);
-		}
-		TempUser.findOne({ email, }).then(tempUser => {
-			if (tempUser) {
-				errors.email = "Email already exists";
-				return res.status(409).json(errors);
+			if (user.accepted) {
+				if (user.password === "not generated") {
+					return res.status(409).json({
+						msg:
+							"You have registered. An email verification has been sent to your email",
+					});
+				}
+				return res.status(409).json({
+					msg:
+						"You have already register with a password. Please go to login page to use the service",
+				});
 			}
-			const newTempUser = new TempUser({
-				firstname,
-				lastname,
-				email,
+			return res.status(400).json({
+				msg:
+					"Your sign-up request has not either been approved or declined by the admin. Please wait!",
 			});
-			newTempUser
-				.save()
-				.then(tempUser => res.json(tempUser))
-				.catch(e => res.status(400).json({ msg: "Failed to save new data", }));
+		}
+		const newUser = new User({
+			firstName,
+			lastName,
+			email,
+			password: "not generated",
 		});
+		newUser
+			.save()
+			.then(user => res.json(user))
+			.catch(() => res.status(400).json({ msg: "Failed to save new data", }));
 	});
 });
 
-// router.post("/signup/temp", (req, res) => {
-// 	const { errors, isValid, } = validateTempUser(req.body);
-// 	if (!isValid) {
-// 		return res.status(400).json(errors);
-// 	}
-// 	User.find;
-// });
-
 //GET all tempUsers
-router.get("/temp-signup", (req, res) => {
-	TempUser.find()
+router.get("/signup/temp", (req, res) => {
+	User.find({ accepted: false, })
 		.sort({ date: -1, })
-		.then(tempUsers => res.json(tempUsers))
-		.catch(() =>
-			res.status(404).json({ msg: "No temporary sign-up request found", })
-		);
+		.then(users => res.json(users))
+		.catch(() => res.status(404).json({ msg: "No sign-up request found", }));
 });
 
 //DELETE tempUser declined by admin
-router.delete("/temp-signup/:id", (req, res) => {
+router.delete("/signup/temp/:id", (req, res) => {
 	const { id, } = req.params;
-	TempUser.findByIdAndRemove(id)
-		.then(() => res.json({ success: true, }))
+	User.findByIdAndRemove(id)
+		.then(() => res.json({ msg: "User has been removed successfully", }))
 		.catch(() =>
 			res.status(404).json({ msg: "No temporary user with that id found", })
 		);
 });
 
 //POST send email verification to tempUser accepted by admin
-router.post("/temp-signup/:id", (req, res) => {
+router.post("/signup/temp/:id", (req, res) => {
 	const { id, } = req.params;
-	const { user, pass, } = credentials;
+	const { username, pass, } = credentials;
 	const { role, batch, } = req.body;
 	if (!role) {
 		return res.status(400).json({ role: "Roles is required", });
@@ -84,63 +83,46 @@ router.post("/temp-signup/:id", (req, res) => {
 	if (!batch) {
 		return res.status(400).json({ batch: "Batch is required", });
 	}
-	const rand = Math.random().toString(36);
-	TempUser.findById(id)
-		.then(tempUser => {
-			const { firstname, lastname, email, } = tempUser;
-			const newUser = new User({
-				firstname,
-				lastname,
-				email,
-				password: rand,
-				role,
-				batch,
+	User.findByIdAndUpdate(id, { accepted: true, }, { new: true, })
+		.then(user => {
+			const { email, firstName, } = user;
+			const payload = { id, firstName, role, batch, };
+			const token = jwt.sign(payload, credentials.secretOrKey);
+			const link = `${req.protocol}://${req.get(
+				"host"
+			)}/users/verify?token=${token}`;
+			const transporter = nodemailer.createTransport({
+				service: "Gmail",
+				auth: {
+					user: username,
+					pass,
+				},
+				tls: {
+					rejectUnauthorized: false,
+				},
 			});
-			newUser
-				.save()
-				.then(() => {
-					const link = `${req.protocol}://${req.get(
-						"host"
-					)}/users/verify?id=${id}&role=${role}&email=${email}&rand=${rand}`;
-					const transporter = nodemailer.createTransport({
-						service: "Gmail",
-						auth: {
-							user,
-							pass,
-						},
-						tls: {
-							rejectUnauthorized: false,
-						},
-					});
-					const mailOptions = {
-						to: email,
-						subject: "Please confirm your email account",
-						html: `<small>Do not reply to this email</small>
-						<p>Hello ${firstname}!</p>
+			const mailOptions = {
+				to: email,
+				subject: "Please confirm your email account",
+				html: `<small>Do not reply to this email</small>
+						<p>Hello ${firstName}!</p>
 						<p>You are granted a role as a ${role}. Please verify your email address by clicking the link below. You can generate your own password by then: 
 								<br/>
 								<a href=${link}>link</a>
 						</p>
-						<br/>
 						<div>
 							<strong>Integrify Oy</strong>
 							<p>Helsinki, FI</p>
 						</div>`,
-					};
-					transporter
-						.sendMail(mailOptions)
-						.then(info => res.json(info))
-						.catch(() =>
-							res.status(400).json({ msg: "Failed to send email verification", })
-						);
-				})
+			};
+			transporter
+				.sendMail(mailOptions)
+				.then(info => res.json(info))
 				.catch(() =>
-					res.status(400).json({ msg: "Failed to save new user data", })
+					res.status(400).json({ msg: "Failed to send email verification", })
 				);
 		})
-		.catch(() =>
-			res.status(404).json({ msg: "No temporary user found with that ID", })
-		);
+		.catch(() => res.status(404).json({ msg: "No user found with that id", }));
 });
 
 //GET tempUser is verified and asked for a password
@@ -149,33 +131,48 @@ router.get("/verify", (req, res) => {
 	const dev_link = "http://localhost:3000";
 	const prod_link = "https://integrify.network";
 	if (link === dev_link || link === prod_link) {
-		const { email, rand, } = req.query;
-		User.findOne({ email, password: rand, })
-			.then(user => res.json(user))
+		const extractToken = req.query.token;
+		const decoded = jwt.verify(extractToken, credentials.secretOrKey);
+		User.findById(decoded.id)
+			.then(user => {
+				if (user.password !== "not generated") {
+					return res.status(404).json({ msg: "Page not found", });
+				}
+
+				return res.json(decoded);
+			})
 			.catch(() => res.status(404).json({ msg: "No user found", }));
 	}
 });
 
-//PUT user, with password provided by user
-router.put("/signup", (req, res) => {
+//PUT set password
+router.put("/signup/:id", (req, res) => {
 	const { errors, isValid, } = validateSignup(req.body);
 	if (!isValid) {
 		return res.status(400).json(errors);
 	}
-	let { email, password, } = req.body;
-	User.findOne({ email, })
+	const { id, } = req.params;
+	let { password, role, } = req.body;
+	User.findById(id)
 		.then(user => {
-			const regex = /[$a-zA-Z]/g;
-			if (regex.test(user.password)) {
-				errors.msg = "You have already registered";
-				return res.status(409).json(errors);
+			if (user.password !== "not generated") {
+				return res.status(409).json({
+					msg:
+						"You have already register with a password. Please go to login page to use the service",
+				});
 			}
 			bcrypt.genSalt(10, (err, salt) => {
 				bcrypt.hash(password, salt, (err, hash) => {
 					if (err) throw err;
-					User.findByIdAndUpdate(user._id, { password: hash, }, { new: true, })
+					User.findByIdAndUpdate(id, { password: hash, }, { new: true, })
 						.then(user => {
-							return res.json(user);
+							const { firstName, } = user;
+							const payload = { id, firstName, role, };
+							const token = jwt.sign(payload, credentials.secretOrKey, {
+								expiresIn: "1d",
+							});
+							res.cookie("jwt_token", token);
+							return res.json({ msg: "cookie is set", });
 						})
 						.catch(() =>
 							res.status(400).json({ msg: "Password cannot be updated", })
@@ -188,7 +185,7 @@ router.put("/signup", (req, res) => {
 
 //GET all users
 router.get("/signup", (req, res) => {
-	User.find()
+	User.find({ accepted: true, })
 		.sort({ date: -1, })
 		.then(users => res.json(users))
 		.catch(() => res.status(404).json({ msg: "No sign-up users found", }));
@@ -230,6 +227,77 @@ router.post("/login", (req, res) => {
 router.get("/logout", (req, res) => {
 	res.clearCookie("jwt_token");
 	res.send("cleared cookie");
+});
+
+//POST reset password
+router.put("/password/reset/:id", (
+	req,
+	res /* next  add it when we have error handling*/
+) => {
+	const { currentPassword, password, } = req.body;
+	const { id, } = req.params;
+	if (!currentPassword) {
+		// err = new Error('Current password is required')
+		// err.statusCode = 400
+		// next(err)
+		return res.status(400).json({ msg: "Current password is required", });
+	}
+	const { errors, isValid, } = validateSignup(req.body);
+	//id, currentPassword, password, password2
+	if (!isValid) {
+		return res.status(400).json(errors);
+	}
+	User.findById(id)
+		.then(user => {
+			if (!user) {
+				return res.status(404).json({ msg: "No user found with that id", });
+			}
+			bcrypt.compare(currentPassword, user.password).then(isMatch => {
+				if (!isMatch) {
+					return res.status(403).json({ password: "Password incorrect", });
+				}
+				bcrypt.genSalt(10, (err, salt) => {
+					// TODO handle errors
+					bcrypt.hash(password, salt, (err, hash) => {
+						//if(err) next(err); TODO add it when we have error handling
+						if (err) throw err;
+						User.findByIdAndUpdate(id, { password: hash, }, { new: true, })
+							.then(user => res.json(user))
+							.catch(() =>
+								res.status(400).json({ msg: "Password cannot be updated", })
+							);
+					});
+				});
+			});
+		})
+		.catch(() => res.status(400).json({ msg: "Id is in wrong format", }));
+});
+
+router.get("/:id", (req, res) => {
+	const { id, } = req.params;
+	Profile.findOne({ user: id, })
+		.populate("user", ["firstName",])
+		.then(profile => {
+			const { role, batch, user, } = profile;
+			const { firstName, } = user;
+			Attendance.findOne({})
+				.sort({ date: -1, })
+				.then(today => {
+					const studentInfo = today.attendanceData.find(
+						stud => stud.studentId.toString() === id
+					);
+					const { timeIn, } = studentInfo.timesStamp;
+					const userData = {
+						id,
+						firstName,
+						role,
+						batch,
+						present: timeIn ? true : false,
+					};
+					res.json(userData);
+				});
+		})
+		.catch(e => console.log(e));
 });
 
 module.exports = router;
