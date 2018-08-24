@@ -1,7 +1,5 @@
-/* eslint-disable */
-
-const { deleteProfile, editProfile } = require("../routes/profiles_functions/profiles_functions");
-let profiles = require("../data/profilejson/profiles.json");
+const { deleteProfile, editProfile, } = require("../profiles_functions/profiles_functions");
+let profiles = require("../../data/profilejson/profiles.json");
 
 describe("deleteProfile", () => {
 	it("remove from profiles array: 1 profile by its id", () => {

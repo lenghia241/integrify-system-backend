@@ -5,7 +5,6 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
@@ -18,7 +17,6 @@ const keys = require("./config/keys");
 const attendance = require("./schedule/cron");
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false, }));
 // cors setup
 app.use(cors());
 

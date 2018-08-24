@@ -10,9 +10,8 @@ const editProfile = (id, new_data, profiles) => {
 		}
 		return profile;
 	});
-	const editedProfile = profiles.filter((profile) => profile._id === id)[0];
+	const editedProfile = profiles.find((profile) => profile._id === id);
 	return editedProfile;
 };
 
-module.exports.deleteProfile = deleteProfile;
-module.exports.editProfile = editProfile;
+module.exports = { deleteProfile, editProfile, };

@@ -12,22 +12,22 @@ router.get("/", (req, res) => {
 // show form to edit 1 profile
 router.get("/:id/edit", (req, res) => {
 	const id = req.params.id;
-	const targetedProfile = profiles.filter((profile) => profile._id === id)[0];
+	const targetedProfile = profiles.find((profile) => profile._id === id);
 	res.send(`Edit Profile Form for user ${targetedProfile.firstName} ${targetedProfile.lastName}`);
 });
 
 // edit 1 profile
 router.put("/:id", (req, res) => {
 	const id = req.params.id;
-	const new_data = req.body;
-	const result = functions.editProfile(id, new_data, profiles);
+	const newData = req.body;
+	const result = functions.editProfile(id, newData, profiles);
 	res.send(result);
 });
 
 // show profile of 1 user
 router.get("/:id", (req, res) => {
 	const id = req.params.id;
-	const targetedProfile = profiles.filter((profile) => profile._id === id)[0];
+	const targetedProfile = profiles.find((profile) => profile._id === id);
 	res.send(targetedProfile);
 });
 

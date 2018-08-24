@@ -18,7 +18,6 @@
   "homepage": "https://github.com/Integrify-Finland/integrify-system-backend#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.4",
     "debug": "~2.6.9",
