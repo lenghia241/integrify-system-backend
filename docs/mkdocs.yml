@@ -8,6 +8,7 @@ edit_uri: develop/docs/
 
 nav:
     - Home: index.md
+    - Routes: routes.md
 
 copyright: Copyright &copy; 2018  Integrify-Backend Team.
  
