@@ -22,6 +22,16 @@ router.get("/assignments", (req, res) => {
 	res.send(assignments);
 });
 
+//show single assignment
+
+router.get("/assignments/:id", (req, res) => {
+	const id = req.params.id;
+	const targeted_assignment = assignments.filter((assignment) => {
+		return assignment._id === id;
+	});
+	res.send(targeted_assignment);
+});
+
 //Adding one assignment
 router.post("/assignments", upload.any(), (req, res) => {
 	const newAssignment = {
@@ -96,6 +106,15 @@ router.put("/assignments/:id", (req, res) => {
 //List of studysynch
 router.get("/studysync", (req, res) => {
 	res.send(studysync);
+});
+//show single studysync
+
+router.get("/studysync/:id", (req, res) => {
+	const id = req.params.id;
+	const targeted_studysync = studysync.filter((studysync) => {
+		return studysync._id === id;
+	});
+	res.send(targeted_studysync);
 });
 //Adding one studysync
 router.post("/studysync", upload.any(), (req, res) => {
