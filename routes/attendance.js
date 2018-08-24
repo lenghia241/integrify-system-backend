@@ -16,22 +16,22 @@ const isStudent = (attendanceData, personId) => {
 	return attendanceData.find(student => student.studentId === personId);
 };
 
-//[Testing] - Reset today as default 
+//[Testing] - Reset today as default
 const resetToday = (today) => {
 	const { attendanceData, } = today;
 	attendanceData.forEach(student => {
 		student.timeStamp = {
 			timeIn: "",
 			timeOut: "",
-		}
+		};
 	});
-}
+};
 
-//List today's date & all students' current presence 
+//List today's date & all students' current presence
 const checkStatusToday = (today) => {
 	const { attendanceData, } = today;
 	const attendanceList = attendanceData.map(student => {
-		const {timeIn, timeOut} = student && student.timeStamp;
+		const {timeIn, timeOut,} = student && student.timeStamp;
 		return {
 			studentId: student.studentId,
 			presence: !!(timeIn && !timeOut),
@@ -41,55 +41,55 @@ const checkStatusToday = (today) => {
 	return {
 		date: today.date,
 		attendanceData: attendanceList,
-	}
-}
+	};
+};
 
 const checkStatusTodayById = (today, id) => {
-	const { attendanceData, date} = today;
+	const { attendanceData, date,} = today;
 	const student = isStudent(attendanceData, id);
 
 	if(!student) {
 		return {
 			msg: "Student is not found",
-		}
+		};
 	}
-	
-	const {timeIn, timeOut} = student.timeStamp;
-	const todayStatus = assesstimeStampStatus(student.timeStamp);
+
+	const {timeIn, timeOut,} = student.timeStamp;
+	const todayStatus = assessTimeStampStatus(student.timeStamp);
 	const presence = !!(timeIn && !timeOut);
 
-	return {		
+	return {
 		date,
 		...student,
-		...todayStatus,	
-		presence
+		...todayStatus,
+		presence,
 	};
-}
+};
 
-const assesstimeStampStatus = (timeStamp) => {
-	const {timeIn, timeOut} = timeStamp;
+const assessTimeStampStatus = (timeStamp) => {
+	const {timeIn, timeOut,} = timeStamp;
 	let todayStatus;
-	if(timeIn && !timeOut) {	
+	if(timeIn && !timeOut) {
 		todayStatus = {
 			late: timeIn > CHECK_IN_TIME ? true : false,
-		}
+		};
 	} else if(timeOut) {
 		todayStatus = {
 			late: timeIn > CHECK_IN_TIME ? true : false,
 			leftEarly: timeOut < CHECK_OUT_TIME ? true : false,
-		}
+		};
 	}
 	return todayStatus;
-}
+};
 
 const updateStudentTodayStatus = (today, reqStudent) => {
-	const {id, time} = reqStudent;
-	const {attendanceData} = today;
+	const {id, time,} = reqStudent;
+	const {attendanceData,} = today;
 	const student = isStudent(attendanceData, id);
 	if(!student) {
 		return {
 			msg: "Student is not found",
-		}
+		};
 	}
 
 	let currentStudentStatus;
@@ -98,54 +98,54 @@ const updateStudentTodayStatus = (today, reqStudent) => {
 			...student.timeStamp,
 			timeOut: time,
 		};
-		const currentStatus = assesstimeStampStatus(student.timeStamp);
+		const currentStatus = assessTimeStampStatus(student.timeStamp);
 		currentStudentStatus = {
 			...student,
 			...currentStatus,
-			presence: false
-		}
+			presence: false,
+		};
 	} else {
 		student.timeStamp = {
 			...student.timeStamp,
 			timeIn: time,
 		};
-		const currentStatus = assesstimeStampStatus(student.timeStamp);
+		const currentStatus = assessTimeStampStatus(student.timeStamp);
 		currentStudentStatus = {
 			...student,
 			...currentStatus,
-			presence: true
-		}
+			presence: true,
+		};
 	}
 	return currentStudentStatus;
-}
+};
 
 const assessHistoryStatus = (history) => {
 	return history.map(day => {
 		const attendanceList = day.attendanceData.map(student => {
 			let attendance;
-			const status = assesstimeStampStatus(student.timeStamp);
+			const status = assessTimeStampStatus(student.timeStamp);
 			if(!status){
 				attendance = ABSENT;
 			} else {
-				const {late, leftEarly} = status;
+				const {late, leftEarly,} = status;
 				attendance = (!late && !leftEarly && leftEarly !== undefined) ? FULL : PARTIAL;
 			}
 			return {
 				...student,
 				...status,
-				attendance
-			}
-		})
+				attendance,
+			};
+		});
 		return {
 			...day,
 			attendanceData: attendanceList,
-		}
-	} 
-)}
+		};
+	}
+	);};
 
 const getHistoryWeek = (monObj, friObj) => {
-	const mon = moment(monObj).format('YYYY-MM-DD');
-	const fri  = moment(friObj).format('YYYY-MM-DD');
+	const mon = moment(monObj).format("YYYY-MM-DD");
+	const fri  = moment(friObj).format("YYYY-MM-DD");
 
 	const historyTempt = history.slice(1);
 	const monIndex = historyTempt.findIndex(classDay => classDay.date === mon);
@@ -154,18 +154,18 @@ const getHistoryWeek = (monObj, friObj) => {
 	let thisWeek;
 	console.log(friIndex, monIndex);
 	if(friIndex !== -1 && monIndex !== -1) {
-		thisWeek = [...historyTempt].splice(friIndex, monIndex + 1);
+		thisWeek = [...historyTempt,].splice(friIndex, monIndex + 1);
 	} else if(friIndex === -1 && monIndex !== -1) {
-		thisWeek = [...historyTempt].splice(0, monIndex + 1);
+		thisWeek = [...historyTempt,].splice(0, monIndex + 1);
 	} else if(friIndex !== -1 && monIndex === -1) {
-		thisWeek = [...historyTempt].splice(friIndex, historyTempt.length);
+		thisWeek = [...historyTempt,].splice(friIndex, historyTempt.length);
 	} else {
 		thisWeek = [];
 	}
 	return thisWeek;
-}
+};
 
-//ROUTING 
+//ROUTING
 router.get("/test/today", (req, res) => {
 	res.send(history[0]);
 });
@@ -182,7 +182,7 @@ router.get("/", (req, res) => {
 router.put("/today/reset", (req, res) => {
 	resetToday(history[0]);
 	res.json(history[0]);
-})
+});
 
 router.get("/today/:studentId", (req, res) => {
 	const { studentId, } = req.params;
@@ -207,22 +207,22 @@ router.get("/history/all", (req, res) => {
 	res.send(history_data);
 });
 
-router.get('/history/this-week', (req, res) => {
+router.get("/history/this-week", (req, res) => {
 	const day = new Date();
 	// set to Monday of this week
-	const thisMonObj = day.setDate(day.getDate() - (day.getDay() + 6) % 7);	
+	const thisMonObj = day.setDate(day.getDate() - (day.getDay() + 6) % 7);
 	const thisFriObj = day.setDate(day.getDate() + 4);
 
-	let thisWeek = getHistoryWeek(thisMonObj, thisFriObj);	
+	let thisWeek = getHistoryWeek(thisMonObj, thisFriObj);
 	thisWeek = assessHistoryStatus(thisWeek);
 	res.send(thisWeek);
-})
+});
 
-router.get('/history/last-week', (req, res) => {
+router.get("/history/last-week", (req, res) => {
 	const day = new Date();
 
 	// set to Monday of this week
-	const thisMonObj = day.setDate(day.getDate() - (day.getDay() + 6) % 7);	
+	const thisMonObj = day.setDate(day.getDate() - (day.getDay() + 6) % 7);
 	// set to previous Monday
 	const lastMonObj = day.setDate(day.getDate() - 7);
 	const lastFriObj = day.setDate(day.getDate() + 4);
@@ -230,6 +230,6 @@ router.get('/history/last-week', (req, res) => {
 	let lastWeek = getHistoryWeek(lastMonObj, lastFriObj);
 	lastWeek = assessHistoryStatus(lastWeek);
 	res.send(lastWeek);
-})
+});
 
 module.exports = router;
