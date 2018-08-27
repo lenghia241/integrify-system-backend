@@ -58,14 +58,31 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res) {
+app.use(function(err, req, res, next) {
 	// set locals, only providing error in development
-	res.locals.message = err.message;
-	res.locals.error = req.app.get("env") === "development" ? err : {};
-
-	// render the error page
-	res.status(err.status || 500);
-	res.render("error");
+	// res.locals.message = err.message;
+	// res.locals.error = req.app.get("env") === "development" ? err : {};
+	if (res.headersSent) {
+		next(err);
+	}
+	switch (err.constructor.name) {
+		case "ValidationError":
+			return res.status(422).json(err.message);
+		case "ConflictError":
+			return res.status(409).json({ msg: err.message, });
+		case "NotFoundError":
+			return res.status(404).json({ msg: err.message, });
+		case "ForbiddenError":
+			return res.status(403).json({ msg: err.message, });
+		case "UnauthorizedError":
+			return res.status(401).json({ msg: err.message, });
+		case "InternalError":
+			return res.status(500).json({ msg: err.message, });
+		case "BadRequestError":
+			return res.status(400).json({ msg: err.message, });
+		default:
+			return res.status(400).json({ msg: "Unknow errors", });
+	}
 });
 
 module.exports = app;
