@@ -12,9 +12,19 @@ module.exports = data => {
 			? "First name must be between 2 and 20 characters"
 			: "";
 	}
+	if (!errors.firstName) {
+		errors.firstName = /\d/g.test(firstName)
+			? "First name cannot contain number"
+			: "";
+	}
 	if (!errors.lastName) {
 		errors.lastName = !validator.isLength(lastName, { min: 2, max: 20, })
 			? "Last name must be between 2 and 20 characters"
+			: "";
+	}
+	if (!errors.lastName) {
+		errors.lastName = /\d/g.test(lastName)
+			? "Last name cannot contain number"
 			: "";
 	}
 	if (!errors.email) {

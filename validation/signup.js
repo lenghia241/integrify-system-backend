@@ -1,5 +1,3 @@
-const validator = require("validator");
-
 module.exports = data => {
 	let { password, password2, } = data;
 	const errors = {
