@@ -10,6 +10,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const dashboardRouter = require("./routes/dashboard");
 const profilesRouter = require("./routes/profiles");
+const profilesRouterV2 = require("./routes/profiles-v2");
 const attendanceRouter = require("./routes/attendance");
 const baseRouter = require("./routes/base");
 
@@ -48,6 +49,7 @@ app.use("/api/dashboard", dashboardRouter);
 app.use("/v1/dashboard", dashboardRouter);
 app.use("/api/profiles", profilesRouter);
 app.use("/v1/profiles", profilesRouter);
+app.use("/v2/profiles", profilesRouterV2);
 app.use("/api/attendance", attendanceRouter);
 app.use("/v1/attendance", attendanceRouter);
 app.use("*", baseRouter);
