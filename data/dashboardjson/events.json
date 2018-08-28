@@ -1,6 +1,5 @@
 [
   {
-    "_id": "5b7a9aaddc946c31d843656e",
     "title": "culpa velit Lorem velit aliquip",
     "description": "culpa nostrud ad dolor id amet qui do ex aliquip",
     "venue": {
@@ -16,7 +15,6 @@
     "status": "upcoming"
   },
   {
-    "_id": "5b7a9aad94c2cf7f51e355d2",
     "title": "officia culpa ea excepteur ipsum",
     "description": "laboris do proident exercitation aliquip tempor id ea in culpa",
     "venue": {
@@ -32,7 +30,6 @@
     "status": "upcoming"
   },
   {
-    "_id": "5b7a9aad93252f48822d9d07",
     "title": "fugiat esse qui non sunt",
     "description": "sint sint ut eiusmod ut reprehenderit pariatur do dolore consequat",
     "venue": {
@@ -48,7 +45,6 @@
     "status": "upcoming"
   },
   {
-    "_id": "5b7a9aadfd370180a100daff",
     "title": "laborum voluptate ipsum nulla ad",
     "description": "ex esse velit velit occaecat voluptate consequat eiusmod consequat pariatur",
     "venue": {
@@ -64,7 +60,6 @@
     "status": "upcoming"
   },
   {
-    "_id": "5b7a9aadd44b4d82445e3d00",
     "title": "deserunt amet sit eiusmod sint",
     "description": "officia elit minim consectetur cillum Lorem nisi sint cillum consequat",
     "venue": {

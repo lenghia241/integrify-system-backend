@@ -1,6 +1,5 @@
 [
   {
-    "_id": "5b7ab1957c9b3c63007d5c8c",
     "firstName": "Hazel",
     "lastName": "Mercer",
     "date": "Fri Aug 17 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
@@ -8,7 +7,6 @@
     "description": "in sit tempor"
   },
   {
-    "_id": "5b7ab1952cc5b5a552cfda72",
     "firstName": "Carlene",
     "lastName": "Faulkner",
     "date": "Fri Aug 8 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
@@ -16,7 +14,6 @@
     "description": "aute mollit magna"
   },
   {
-    "_id": "5b7ab1953129baf45fac3a05",
     "firstName": "Celeste",
     "lastName": "Larsen",
     "date": "Fri Aug 20 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
@@ -24,7 +21,6 @@
     "description": "pariatur ullamco voluptate"
   },
   {
-    "_id": "5b7ab195f176fd2767d3a954",
     "firstName": "Coleman",
     "lastName": "Carlson",
     "date": "Fri Aug 15 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
@@ -32,7 +28,6 @@
     "description": "voluptate velit magna"
   },
   {
-    "_id": "5b7ab1953129baf45fac3a05",
     "firstName": "Celeste",
     "lastName": "Larsen",
     "date": "Fri Aug 25 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
@@ -40,7 +35,6 @@
     "description": "sint deserunt eiusmod"
   },
   {
-    "_id": "5b7ab1957c9b3c63007d5c8c",
     "firstName": "Hazel",
     "lastName": "Mercer",
     "date": "Fri Aug 30 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
