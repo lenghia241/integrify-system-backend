@@ -1,0 +1,189 @@
+[{
+    "assignments":[
+        {
+          "date": "Fri Aug 17 2018 11:46:25 GMT+0300 (Eastern European Summer Time)",
+          "dueDate": "Fri Aug 18 2018 14:46:25 GMT+0300 (Eastern European Summer Time)",
+          "titleOfAssignment": "Lorem ex",
+          "description": "id anim aliqua",
+          "githubLink": "https://github.com/firstname/assignment_name",
+          "submitted": false
+        },
+        {
+          "date": "Fri Aug 17 2018 12:46:25 GMT+0300 (Eastern European Summer Time)",
+          "dueDate": "Fri Aug 19 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+          "titleOfAssignment": "cillum est",
+          "description": "duis cillum in",
+          "githubLink": "https://github.com/firstname/assignment_name",
+          "submitted": false
+        },
+        {
+          "date": "Fri Aug 17 2018 13:50:25 GMT+0300 (Eastern European Summer Time)",
+          "dueDate": "Fri Aug 20 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+          "titleOfAssignment": "non veniam",
+          "description": "reprehenderit enim tempor",
+          "githubLink": "https://github.com/firstname/assignment_name",
+          "submitted": false
+        },
+        {
+          "date": "Fri Aug 17 2018 17:46:25 GMT+0300 (Eastern European Summer Time)",
+          "dueDate": "Fri Aug 20 2018 20:46:25 GMT+0300 (Eastern European Summer Time)",
+          "titleOfAssignment": "sunt in",
+          "description": "duis ullamco occaecat",
+          "githubLink": "https://github.com/firstname/assignment_name",
+          "submitted": false
+        },
+        {
+          "date": "Fri Aug 17 2018 18:46:25 GMT+0300 (Eastern European Summer Time)",
+          "dueDate": "Fri Aug 21 2018 19:46:25 GMT+0300 (Eastern European Summer Time)",
+          "titleOfAssignment": "in consectetur",
+          "description": "proident aliqua anim",
+          "githubLink": "https://github.com/firstname/assignment_name",
+          "submitted": false
+        },
+        {
+          "date": "Fri Aug 17 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+          "dueDate": "Fri Aug 22 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+          "titleOfAssignment": "aliquip fugiat",
+          "description": "id laborum in",
+          "githubLink": "https://github.com/firstname/assignment_name",
+          "submitted": false
+        },
+        {
+          "date": "Fri Aug 17 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+          "dueDate": "Fri Aug 20 2018 13:46:25 GMT+0300 (Eastern European Summer Time)",
+          "titleOfAssignment": "do commodo",
+          "description": "qui adipisicing cillum",
+          "githubLink": "https://github.com/firstname/assignment_name",
+          "submitted": false
+        }
+      ],
+    "events":[
+        {
+          "title": "culpa velit Lorem velit aliquip",
+          "description": "culpa nostrud ad dolor id amet qui do ex aliquip",
+          "venue": {
+            "address": "744 Noll Street",
+            "zip": 5217,
+            "name": "culpa",
+            "state": "Florida",
+            "city": "Mulberry",
+            "country": "Bainbridge"
+          },
+          "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+          "time": "2018-08-27T03:25:28 -03:00",
+          "status": "upcoming"
+        },
+        {
+          "title": "officia culpa ea excepteur ipsum",
+          "description": "laboris do proident exercitation aliquip tempor id ea in culpa",
+          "venue": {
+            "address": "134 Ralph Avenue",
+            "zip": 4610,
+            "name": "consequat",
+            "state": "Kansas",
+            "city": "Roland",
+            "country": "Farmington"
+          },
+          "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+          "time": "2018-08-21T11:22:38 -03:00",
+          "status": "upcoming"
+        },
+        {
+          "title": "fugiat esse qui non sunt",
+          "description": "sint sint ut eiusmod ut reprehenderit pariatur do dolore consequat",
+          "venue": {
+            "address": "285 Colin Place",
+            "zip": 4699,
+            "name": "qui",
+            "state": "Virgin Islands",
+            "city": "Dixie",
+            "country": "Hartsville/Hartley"
+          },
+          "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+          "time": "2018-10-25T12:23:27 -03:00",
+          "status": "upcoming"
+        },
+        {
+          "title": "laborum voluptate ipsum nulla ad",
+          "description": "ex esse velit velit occaecat voluptate consequat eiusmod consequat pariatur",
+          "venue": {
+            "address": "263 Pioneer Street",
+            "zip": 1943,
+            "name": "est",
+            "state": "Delaware",
+            "city": "Kraemer",
+            "country": "Gilgo"
+          },
+          "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+          "time": "2018-12-17T02:18:47 -02:00",
+          "status": "upcoming"
+        },
+        {
+          "title": "deserunt amet sit eiusmod sint",
+          "description": "officia elit minim consectetur cillum Lorem nisi sint cillum consequat",
+          "venue": {
+            "address": "697 Melba Court",
+            "zip": 8364,
+            "name": "eu",
+            "state": "Ohio",
+            "city": "Weogufka",
+            "country": "Jackpot"
+          },
+          "eventUrl": "https://www.myhelsinki.fi/en/see-and-do/events/10-x-night-of-the-arts",
+          "time": "2018-10-01T10:11:18 -03:00",
+          "status": "upcoming"
+        }
+      ],
+    "studysync":[
+        {
+          "student_id": "",
+          "firstName": "Hazel",
+          "lastName": "Mercer",
+          "date": "Fri Aug 17 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
+          "title": "culp aywe",
+          "description": "in sit tempor"
+        },
+        {
+          "firstName": "Carlene",
+          "lastName": "Faulkner",
+          "student_id": "",
+          "date": "Fri Aug 8 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
+          "title": "sit asds",
+          "description": "aute mollit magna"
+        },
+        {
+          "firstName": "Celeste",
+          "lastName": "Larsen",
+          "student_id": "",
+          "date": "Fri Aug 20 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
+          "title": "veniam iuyioutr",
+          "description": "pariatur ullamco voluptate"
+        },
+        {
+          "firstName": "Coleman",
+          "lastName": "Carlson",
+          "student_id": "",
+          "date": "Fri Aug 15 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
+          "title": "eiusmod ueyurt",
+          "description": "voluptate velit magna"
+        },
+        {
+          "firstName": "Celeste",
+          "lastName": "Larsen",
+          "student_id": "",
+          "date": "Fri Aug 25 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
+          "title": "excepteur uioer",
+          "description": "sint deserunt eiusmod"
+        },
+        {
+          "firstName": "Hazel",
+          "lastName": "Mercer",
+          "student_id": "",
+          "date": "Fri Aug 30 2018 13:56:18 GMT+0300 (Eastern European Summer Time)",
+          "title": "pariatur ewqer",
+          "description": "ad ad eiusmod"
+        }
+      ]
+      
+      
+}]

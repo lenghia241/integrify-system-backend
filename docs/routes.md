@@ -140,4 +140,3 @@ This is API version1. In this we serve mockdata in json file...
     - DELETE [https://integrify.network/api/dashboard/assignments/id](https://integrify.network/api/dashboard/assignments/5b76a781b153f60a31a21413)
 - Edit and update assignment by id
     - PUT [https://integrify.network/api/dashboard/assignments/id](https://integrify.network/api/dashboard/assignments/5b76a781b153f60a31a21413)
-
